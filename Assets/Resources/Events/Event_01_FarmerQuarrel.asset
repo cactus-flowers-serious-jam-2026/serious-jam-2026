@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
+  m_Name: Event_01_FarmerQuarrel
+  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
+  eventTitle: Border Farm Dispute
+  eventDescription: Neighboring farm owners from two countries are in quarrel! One
+    farmer's pig wandered off and ate part of another farmer's crops. The victim
+    farmer is demanding payment for his losses.
+  choicesEffects:
+  - effects:
+    - {fileID: 11400000, guid: d4b7b7090e210f1428f95d1f6c7daf4a, type: 2}
+  - effects: []
+  - effects:
+    - {fileID: 11400000, guid: 8e9a56311f4ee9946aa46182f37a45fa, type: 2}
+  scope: 1
+  buttonChoices:
+  - Make the Pig's owner pay for lost crops.
+  - Convince the Farmer to get recompensation from insurance.

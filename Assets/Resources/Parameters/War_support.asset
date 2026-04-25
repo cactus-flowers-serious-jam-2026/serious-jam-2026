@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
-  m_Name: Event_01_FarmerQuarrel
-  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
-  eventTitle: 
-  eventDescription: 
-  scope: 0
-  buttonChoices: []
+  m_Script: {fileID: 11500000, guid: 8edf28474a35d455a93ea59422800d04, type: 3}
+  m_Name: War_support
+  m_EditorClassIdentifier: Assembly-CSharp::Parameter
+  Name: War support
+  Icon: {fileID: 0}

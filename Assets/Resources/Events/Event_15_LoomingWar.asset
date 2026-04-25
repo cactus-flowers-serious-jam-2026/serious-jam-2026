@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
+  m_Name: Event_15_LoomingWar
+  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
+  eventTitle: Looming War
+  eventDescription: The posibility of war is over the corner, it might be a good
+    idea to prepare for that.
+  choicesEffects:
+  - effects:
+    - {fileID: 11400000, guid: 3ada6530400aa9a41b02f138024bfa30, type: 2}
+  - effects:
+    - {fileID: 11400000, guid: 582da7ebcc55e58449a7da6c529cb989, type: 2}
+  scope: 1
+  buttonChoices:
+  - Focus on economics.
+  - Focus on military.

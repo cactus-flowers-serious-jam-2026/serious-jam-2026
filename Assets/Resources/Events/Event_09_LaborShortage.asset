@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
+  m_Name: Event_09_LaborShortage
+  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
+  eventTitle: German Labor Shortage
+  eventDescription: Lack of manpower, Germany has insufficient number of workers
+    to finish their project on time.
+  choicesEffects:
+  - effects:
+    - {fileID: 11400000, guid: 9107fb7e6c8504544b312414a3f61926, type: 2}
+  - effects:
+    - {fileID: 11400000, guid: 8de0a26916ae53e4ab627092a7cbf259, type: 2}
+  scope: 1
+  buttonChoices:
+  - Send polish workers, at the expense of factories efficency.
+  - We need every pair of hands, Don't send any.
