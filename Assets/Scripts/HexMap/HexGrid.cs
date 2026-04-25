@@ -49,8 +49,10 @@ public class HexGrid : MonoBehaviour
         
     }
 
-    public HexCell GetCell(int x, int y)
+    public HexCell GetCell(HexCoordinates coordinates)
     {
+        int x = coordinates.X;
+        int y = coordinates.Y + coordinates.X / 2;
         return cells[x,y];
     }
 }

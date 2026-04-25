@@ -6,12 +6,21 @@ using UnityEngine.WSA;
 public class Action : ScriptableObject
 {
     public string Description;
-    public Effect Impact;
+    public Effect Effect;
     public int Timeout; // -1 - means one-time action, 0 - no timeout, 1+ - timeout in ticks 
     public Dictionary<Parameter, int> Cost;
     public bool Active = true;
     private int timeoutCounter;
+    public string ActionID;
 
+    private void OnValidate()
+    {
+        #if UNITY_EDITOR
+        ActionID = this.name;
+        UnityEditor.EditorUtility.SetDirty(this);
+        #endif
+    }
+    
     public void OnTickEvent()
     {
         if (!Active && Timeout > 0)
