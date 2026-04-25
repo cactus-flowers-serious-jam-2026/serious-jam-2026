@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class CountryManager : MonoBehaviour
 {
-    public Dictionary<string, Country> Countries { get; private set; }
-    
+    public static Dictionary<string, Country> Countries { get; private set; } = new Dictionary<string, Country>();
+
     public static CountryManager instance;
 
     void Awake()
@@ -29,7 +29,7 @@ public class CountryManager : MonoBehaviour
         
     }
 
-    public void ApplyEffect(string countryId, Effect e)
+    public static void ApplyEffect(string countryId, Effect e)
     {
         if(Countries.ContainsKey(countryId))
             Countries[countryId].ApplyEffect(e);

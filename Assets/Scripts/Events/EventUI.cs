@@ -1,6 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
 
 public class EventUI : MonoBehaviour
 {
@@ -8,59 +8,37 @@ public class EventUI : MonoBehaviour
     public GameObject eventPanel;
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI descText;
+    public Image timerBar;
 
     [Header("Choice Buttons")]
     public GameObject[] choiceButtons;
     public TextMeshProUGUI[] buttonTexts;
 
-    private Queue<GameEvent> eventQueue = new Queue<GameEvent>();
-
-    private bool isShowingEvent = false;
+    public EventPresenter presenter;
 
     void Start()
     {
         eventPanel.SetActive(false);
     }
 
-    
-    public void DisplayEventOnScreen(int eventIndex)
+    public void ShowEvent(GameEvent eventToShow)
     {
-        
-        GameEvent chosenEvent = EventDatabase.GlobalEvents[eventIndex];
+        titleText.text = eventToShow.eventTitle;
+        descText.text = eventToShow.eventDescription;
 
-        eventQueue.Enqueue(chosenEvent);
+        SetupButtons(eventToShow);
 
-        
-        if (isShowingEvent == false)
-        {
-            ShowNextEvent();
-        }
+        eventPanel.SetActive(true);
     }
 
-    private void ShowNextEvent()
+    public void UpdateTimerBar(float fillAmount)
     {
-        if (eventQueue.Count > 0)
-        {
-            isShowingEvent = true;
+        timerBar.fillAmount = fillAmount;
+    }
 
-            GameEvent eventToShow = eventQueue.Dequeue();
-
-            titleText.text = eventToShow.eventTitle;
-            descText.text = eventToShow.eventDescription;
-
-            SetupButtons(eventToShow);
-
-            eventPanel.SetActive(true);
-
-
-
-            Invoke("HidePanel", 3f);
-        }
-        else
-        {
-            isShowingEvent = false;
-            eventPanel.SetActive(false);
-        }
+    public void HidePanel()
+    {
+        eventPanel.SetActive(false);
     }
 
     private void SetupButtons(GameEvent currentEvent)
@@ -70,20 +48,21 @@ public class EventUI : MonoBehaviour
             choiceButtons[i].SetActive(false);
         }
 
-        for (int i = 0;i < currentEvent.buttonChoices.Length; i++)
+        for (int i = 0; i < currentEvent.buttonChoices.Length; i++)
         {
             if (i < choiceButtons.Length)
             {
                 choiceButtons[i].SetActive(true);
                 buttonTexts[i].text = currentEvent.buttonChoices[i];
+
+                Button btn = choiceButtons[i].GetComponent<Button>();
+
+                btn.onClick.RemoveAllListeners();
+
+                int choiceIndex = i;
+
+                btn.onClick.AddListener(() => presenter.OnOptionSelected(choiceIndex));
             }
         }
-    }
-
-    private void HidePanel()
-    {
-        eventPanel.SetActive(false);
-
-        ShowNextEvent();
     }
 }

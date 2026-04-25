@@ -6,6 +6,12 @@ public enum EventScope
     Global
 }
 
+[System.Serializable]
+public struct ButtonChoice
+{
+    public Effect[] effects;
+}
+
 [CreateAssetMenu(fileName = "New Event", menuName = "Strategy Game/Event")]
 public class GameEvent : ScriptableObject
 {
@@ -13,6 +19,8 @@ public class GameEvent : ScriptableObject
     public string eventTitle;
     [TextArea(3, 5)]
     public string eventDescription;
+
+    public ButtonChoice[] choicesEffects;
 
     public EventScope scope;
 
