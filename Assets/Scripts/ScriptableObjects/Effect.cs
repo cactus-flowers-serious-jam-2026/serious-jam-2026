@@ -8,9 +8,15 @@ public struct ParameterChange
     public float change;
 }
 
+[System.Serializable]
+public class ParameterChangeList
+{
+    public ParameterChange[] Changes;
+}
+
 [CreateAssetMenu(fileName = "Effect", menuName = "Scriptable Objects/Effect")]
 public class Effect : ScriptableObject
 {
     public string CountryId;
-    public ParameterChange[] ParameterChanges;
+    public ParameterChangeList[] ParameterChanges;
 }

@@ -9,6 +9,10 @@ public class EventUI : MonoBehaviour
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI descText;
 
+    [Header("Choice Buttons")]
+    public GameObject[] choiceButtons;
+    public TextMeshProUGUI[] buttonTexts;
+
     private Queue<GameEvent> eventQueue = new Queue<GameEvent>();
 
     private bool isShowingEvent = false;
@@ -26,7 +30,7 @@ public class EventUI : MonoBehaviour
 
         eventQueue.Enqueue(chosenEvent);
 
-        // 3. If we are NOT currently showing an event, tell the line to move forward!
+        
         if (isShowingEvent == false)
         {
             ShowNextEvent();
@@ -44,7 +48,11 @@ public class EventUI : MonoBehaviour
             titleText.text = eventToShow.eventTitle;
             descText.text = eventToShow.eventDescription;
 
+            SetupButtons(eventToShow);
+
             eventPanel.SetActive(true);
+
+
 
             Invoke("HidePanel", 3f);
         }
@@ -52,6 +60,23 @@ public class EventUI : MonoBehaviour
         {
             isShowingEvent = false;
             eventPanel.SetActive(false);
+        }
+    }
+
+    private void SetupButtons(GameEvent currentEvent)
+    {
+        for (int i = 0; i < choiceButtons.Length; i++)
+        {
+            choiceButtons[i].SetActive(false);
+        }
+
+        for (int i = 0;i < currentEvent.buttonChoices.Length; i++)
+        {
+            if (i < choiceButtons.Length)
+            {
+                choiceButtons[i].SetActive(true);
+                buttonTexts[i].text = currentEvent.buttonChoices[i];
+            }
         }
     }
 
