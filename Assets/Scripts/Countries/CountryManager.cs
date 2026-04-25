@@ -19,7 +19,7 @@ public class CountryManager : MonoBehaviour
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {
+    { 
         
     }
 
@@ -31,6 +31,7 @@ public class CountryManager : MonoBehaviour
 
     public void ApplyEffect(string countryId, Effect e)
     {
-        
+        if(Countries.ContainsKey(countryId))
+            Countries[countryId].ApplyEffect(e);
     }
 }
