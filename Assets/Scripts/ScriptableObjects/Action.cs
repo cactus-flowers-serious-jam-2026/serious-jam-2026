@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.WSA;
 
 [CreateAssetMenu(fileName = "Action", menuName = "Scriptable Objects/Action")]
 public class Action : ScriptableObject

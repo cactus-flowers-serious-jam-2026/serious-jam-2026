@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ecological
   m_EditorClassIdentifier: Assembly-CSharp::CountryResource
   Name: Ecological
-  Icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  Icon: {fileID: -8498962393827619186, guid: a1530cf61a1824fbba52a1ba19f60239, type: 3}
   Count: 0
   MaxCount: 200

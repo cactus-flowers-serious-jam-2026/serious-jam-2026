@@ -33,7 +33,7 @@ public class GameTickManager : MonoBehaviour
 
             fireEvent.Invoke(randomEventNumber);
 
-            float randomTime = Random.Range(15f, 30f);
+            float randomTime = Random.Range(2.5f, 2.5f);
 
             myTimer = new SimpleTimer(randomTime);
 

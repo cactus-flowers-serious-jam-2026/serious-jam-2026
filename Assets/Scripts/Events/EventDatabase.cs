@@ -9,6 +9,7 @@ public class EventDatabase : MonoBehaviour
 
     void Awake()
     {
+        inspectorEvents = Resources.LoadAll<GameEvent>("Events");
         GlobalEvents = inspectorEvents;
     }
 }
