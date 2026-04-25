@@ -17,8 +17,9 @@ public class SelectionPresenter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) // IsPointerOverGameObject() only triggers on UI objects
+        if (Input.GetMouseButtonDown(0))// && !EventSystem.current.IsPointerOverGameObject()) // IsPointerOverGameObject() only triggers on UI objects
         {
+            Debug.Log("Sosal");
             HandleSelection();
         }
         else if (Input.GetMouseButtonDown(1))

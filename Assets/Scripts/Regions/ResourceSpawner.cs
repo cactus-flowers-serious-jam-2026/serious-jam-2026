@@ -55,5 +55,6 @@ public class ResourceSpawner : MonoBehaviour
         bubble.count = Random.Range(5, 15);
         bubble.icon = Resources.Load<Sprite>("Sprites/" + type);
         bubble.GetComponentInChildren<Image>().sprite = bubble.icon;
+        bubble.Follow = transform;
     }
 }
