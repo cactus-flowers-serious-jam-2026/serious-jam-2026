@@ -13,9 +13,9 @@ public class CountryResView : MonoBehaviour
     {
         _countryResources = new Dictionary<string, CountryResource>
         {
-            {"eco", Resources.Load<CountryResource>("CountryResources/Ecological")},
-            {"mil", Resources.Load<CountryResource>("CountryResources/Military")},
-            {"pol", Resources.Load<CountryResource>("CountryResources/Political")}
+            {GLOBAL_TAGS.ECOLOGY_RES_TAG, Resources.Load<CountryResource>("CountryResources/Ecological")},
+            {GLOBAL_TAGS.MILITARY_RES_TAG, Resources.Load<CountryResource>("CountryResources/Military")},
+            {GLOBAL_TAGS.POLITICAL_RES_TAG, Resources.Load<CountryResource>("CountryResources/Political")}
         };
 
         int i = 0;
