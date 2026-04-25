@@ -12,7 +12,9 @@ public class Country : MonoBehaviour
     private int[] regionIDs;
     
     private Dictionary<Parameter, float> _parameters;
-    private Dictionary<string, CountryResource> _countryResources;
+
+    public Dictionary<string, CountryResource> CountryResources { get; private set; } =
+        new Dictionary<string, CountryResource>();
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,8 +34,8 @@ public class Country : MonoBehaviour
 
     public void OnResourceGathered(string type, int count)
     {
-        if (_countryResources.ContainsKey(type))
-            _countryResources[type].IncreaseCount(count);
+        if (CountryResources.ContainsKey(type))
+            CountryResources[type].IncreaseCount(count);
     }
 
     public void ApplyEffect(Effect e)
