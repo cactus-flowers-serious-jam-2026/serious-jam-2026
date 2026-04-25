@@ -13,9 +13,18 @@ public class Country : MonoBehaviour
     
     private Dictionary<Parameter, float> _parameters;
 
-    public Dictionary<string, CountryResource> CountryResources { get; private set; } =
-        new Dictionary<string, CountryResource>();
-    
+    public Dictionary<string, CountryResource> CountryResources { get; private set; }
+
+
+    void Awake()
+    {
+        CountryResources = new Dictionary<string, CountryResource>()
+        {
+            {GLOBAL_TAGS.ECOLOGY_RES_TAG, Resources.Load<CountryResource>("CountryResources/Ecological")},
+            {GLOBAL_TAGS.MILITARY_RES_TAG, Resources.Load<CountryResource>("CountryResources/Military")},
+            {GLOBAL_TAGS.POLITICAL_RES_TAG, Resources.Load<CountryResource>("CountryResources/Political")},
+        };
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,7 +41,7 @@ public class Country : MonoBehaviour
         
     }
 
-    public void OnResourceGathered(string type, int count)
+    public void GatherResource(string type, int count)
     {
         if (CountryResources.ContainsKey(type))
             CountryResources[type].IncreaseCount(count);
