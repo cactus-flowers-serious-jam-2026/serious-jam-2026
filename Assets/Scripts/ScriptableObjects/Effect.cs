@@ -20,3 +20,4 @@ public class Effect : ScriptableObject
     public string CountryId;
     public ParameterChangeList[] ParameterChanges;
 }
+

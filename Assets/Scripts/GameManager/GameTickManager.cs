@@ -10,9 +10,13 @@ public class GameTickManager : MonoBehaviour
 
     private SimpleTimer myTimer;
 
+
     void Start()
     {
-        myTimer = new SimpleTimer(5f);
+
+        float firstRandomTime = Random.Range(15f , 30f);
+
+        myTimer = new SimpleTimer(firstRandomTime);
     }
 
    
@@ -20,14 +24,20 @@ public class GameTickManager : MonoBehaviour
     {
        bool isTimerFinished = myTimer.Tick(Time.deltaTime);
 
-       if (isTimerFinished)  
-       {
+        if (isTimerFinished)
+        {
+
             int totalEvents = EventDatabase.GlobalEvents.Length;
 
             int randomEventNumber = Random.Range(0, totalEvents);
 
             fireEvent.Invoke(randomEventNumber);
-       }
+
+            float randomTime = Random.Range(15f, 30f);
+
+            myTimer = new SimpleTimer(randomTime);
+
+        }
 
     }
 
