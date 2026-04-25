@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Image = UnityEngine.UIElements.Image;
 using Random = UnityEngine.Random;
 
 public class ResourceSpawner : MonoBehaviour
@@ -11,8 +13,14 @@ public class ResourceSpawner : MonoBehaviour
     
     [SerializeField]
     private ResourceBubble _resourceBubblePrefab;
-    
-    
+
+    private static Canvas _popupsCanvas;
+
+    private void Awake()
+    {
+        
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,5 +54,6 @@ public class ResourceSpawner : MonoBehaviour
         bubble.type = type;
         bubble.count = Random.Range(5, 15);
         bubble.icon = Resources.Load<Sprite>("Sprites/" + type);
+        bubble.GetComponentInChildren<Image>().sprite = bubble.icon;
     }
 }
