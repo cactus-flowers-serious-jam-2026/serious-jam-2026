@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
+  m_Name: Event_17_MilitaryVsEconomy
+  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
+  eventTitle: Military vs Economy
+  eventDescription: Poland is heavily investing in military power, but it might come
+    with a cost neglecting other sectors.
+  choicesEffects:
+  - effects:
+    - {fileID: 11400000, guid: 299b0ff7d3c9f7746b1511a414f672a8, type: 2}
+  - effects:
+    - {fileID: 11400000, guid: cb51c3ed4db93b045b7c34d8dea0e535, type: 2}
+  scope: 0
+  buttonChoices:
+  - Let's focus on militarization.
+  - Let's focus on other stuff.

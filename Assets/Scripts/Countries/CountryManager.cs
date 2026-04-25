@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class CountryManager : MonoBehaviour
 {
-    public static Dictionary<string, Country> Countries { get; private set; }
-    
+    public static Dictionary<string, Country> Countries { get; private set; } = new Dictionary<string, Country>();
+
     public static CountryManager instance;
 
     void Awake()

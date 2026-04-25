@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
+  m_Name: Event_13_Reparations
+  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
+  eventTitle: WWII Reparations
+  eventDescription: Poland is compensation from Germany for losses during WWII, that
+    they plan to use for reperation. Germany is standing their ground, saying that
+    reperation have already been finished.
+  choicesEffects:
+  - effects:
+    - {fileID: 11400000, guid: 1b16573cd09abe94bbb28c2ac13c43c4, type: 2}
+  - effects:
+    - {fileID: 11400000, guid: aca0171c99d38f0419c66fceedc93ee3, type: 2}
+  scope: 1
+  buttonChoices:
+  - Let Poland give it up.
+  - Let Germany pay it up.

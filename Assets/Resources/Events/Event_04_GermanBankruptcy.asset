@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
+  m_Name: Event_04_GermanBankruptcy
+  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
+  eventTitle: German Bankruptcy Crisis
+  eventDescription: Many German marks are now on the verge of bankruptcy, due to
+    economic crisis, this might be a good opportunity to gain more allies.
+  choicesEffects:
+  - effects:
+    - {fileID: 11400000, guid: d630a4132a39218488c8d7504751ea39, type: 2}
+  - effects:
+    - {fileID: 11400000, guid: 2fedaff8cff0059408fea104dc1645b3, type: 2}
+  scope: 1
+  buttonChoices:
+  - Lend them a hand.
+  - Not enough money for that.

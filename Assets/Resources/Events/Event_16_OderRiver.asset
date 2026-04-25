@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
+  m_Name: Event_16_OderRiver
+  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
+  eventTitle: The Oder River Debate
+  eventDescription: Fight over Oder river! There are suggestions to turn the river
+    into a trade route for ships, but that would heavily pollute the water.
+  choicesEffects:
+  - effects:
+    - {fileID: 11400000, guid: 93e07f64d439acb4299450752c596bce, type: 2}
+  - effects:
+    - {fileID: 11400000, guid: 4735dfe7eb74e494a8e3ac429c28c697, type: 2}
+  scope: 1
+  buttonChoices:
+  - Use the river for trade.
+  - Let the water remain clean.
