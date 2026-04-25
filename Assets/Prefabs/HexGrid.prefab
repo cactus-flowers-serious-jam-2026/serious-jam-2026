@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2923580000971602668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52372059a23eb732cbc32a7cee618b43, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fa08a2133ae8c85bad6055cc706951a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectionPresenter
   HexGrid: {fileID: 7048325946194978738}
@@ -90,12 +90,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5331314528060272469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03bb91740906c7fa8aa90c176d93fa8a, type: 3}
+  m_Script: {fileID: 11500000, guid: b02357a571d7cc374a73c9d01f9469e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HexGrid
   width: 6
   height: 6
-  cellPrefab: {fileID: 3958199726366967121, guid: 6df965f35ec11e3518d7e388bee3f559, type: 3}
+  cellPrefab: {fileID: 3958199726366967121, guid: dc00188c8260ea175847babe59a9f56b, type: 3}
 --- !u!1 &5550554550279958781
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5550554550279958781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77c585cc81da40c7fab482bee4a5ac5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 241c08dc02934bdd5a01d713abe082db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HexMesh
 --- !u!1001 &433507800558206238

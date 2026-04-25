@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1950553280712823878}
   - component: {fileID: 2546431057509776180}
   - component: {fileID: 3958199726366967121}
+  - component: {fileID: 5538063800675321228}
   m_Layer: 0
   m_Name: HexCell
   m_TagString: Untagged
@@ -101,9 +102,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 923068932673728672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae58755c3d5ba35359607003b3644c54, type: 3}
+  m_Script: {fileID: 11500000, guid: dcc349f1224ef32efa729f2c01f3b7d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HexCell
   coordinates:
     x: 0
     y: 0
+--- !u!114 &5538063800675321228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923068932673728672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76145f1e1491977f8aab8de40c890fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Region
