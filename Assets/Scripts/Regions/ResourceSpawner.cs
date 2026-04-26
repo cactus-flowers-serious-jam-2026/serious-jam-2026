@@ -50,11 +50,8 @@ public class ResourceSpawner : MonoBehaviour
                 switch (resource)
                 {
                     case GLOBAL_TAGS.ECOLOGY_RES_TAG:
-                        Debug.Log(GLOBAL_TAGS.ECOLOGY_RES_TAG);
-                        Debug.Log(region.Parameters.Count);
                         foreach (var param in region.Parameters)
                         {
-                            Debug.Log(param.Key.Name + "\t" + GLOBAL_TAGS.ECOLOGY_RES_TAG);
                             switch (param.Key.Name)
                             {
                                 case "Happiness":
@@ -70,12 +67,10 @@ public class ResourceSpawner : MonoBehaviour
                                     spawnChance += 0.00f * param.Value;
                                     break;
                             }
-                            Debug.Log(param.Key + "\t" + param.Value + "\t" + region.ID);
                         }                        
                         break;
 
                     case GLOBAL_TAGS.MILITARY_RES_TAG:
-                        Debug.Log(GLOBAL_TAGS.MILITARY_RES_TAG);
                         foreach (var param in region.Parameters)
                         {
                             switch (param.Key.Name)
@@ -118,7 +113,6 @@ public class ResourceSpawner : MonoBehaviour
                 }
                 
                 float roll = Random.value;
-                Debug.Log(roll + "\t" + spawnChance + "\t" + resource);
                 
                 if (roll <= spawnChance)
                     region.SpawnResource(resource, Random.Range(5, 15));

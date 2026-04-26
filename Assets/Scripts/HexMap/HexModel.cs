@@ -55,6 +55,7 @@ public class HexModel : MonoBehaviour
     public void HandleActionChosen(Action action) // DONT TOOUCH
     {
         hexCellRegion = SelectedCell.gameObject.GetComponent<Region>();
+        Debug.Log("CLICKED ON REGION WITH ID:" + hexCellRegion.ID);
         action.Activate();
         for (int i = 0; i < action.Effect.ParameterChanges[HexCellRegion.ID].Changes.Length; i++)
         {

@@ -19,6 +19,7 @@ public class Country : MonoBehaviour
     
     void Awake()
     {
+        
         CountryResources = new Dictionary<string, CountryResource>
         {
             { GLOBAL_TAGS.ECOLOGY_RES_TAG,  Resources.Load<CountryResource>("CountryResources/Ecological") },
