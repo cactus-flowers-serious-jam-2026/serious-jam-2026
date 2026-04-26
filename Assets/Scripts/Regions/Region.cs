@@ -56,6 +56,7 @@ public class Region : MonoBehaviour
 
     public void SpawnResource(string type, int count)
     {
-        ResourceBubble.DisplayBubble(type, count);
+        if(!ResourceBubble.gameObject.activeInHierarchy)
+            ResourceBubble.DisplayBubble(type, count);
     }
 }

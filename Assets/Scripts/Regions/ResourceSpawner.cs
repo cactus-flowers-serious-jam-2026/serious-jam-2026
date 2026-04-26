@@ -60,7 +60,7 @@ public class ResourceSpawner : MonoBehaviour
                                     break;
                                 
                                 case "Interest in politics":
-                                    spawnChance += 1.10f * param.Value;
+                                    spawnChance += 0.10f * param.Value;
                                     break;
                                 
                                 case "Pollution":

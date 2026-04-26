@@ -48,6 +48,7 @@ public class HexModel : MonoBehaviour
         
         SelectedCell = HexGrid.GetCell(coordinates);
         Region region = SelectedCell.gameObject.GetComponent<Region>();
+        Debug.Log("CLICKED ON REGION WITH ID:" + region.ID);
         if (region != null)
             SelectionUIEvents.OnRegionSelected?.Invoke(region);
     }
@@ -55,7 +56,6 @@ public class HexModel : MonoBehaviour
     public void HandleActionChosen(Action action) // DONT TOOUCH
     {
         hexCellRegion = SelectedCell.gameObject.GetComponent<Region>();
-        Debug.Log("CLICKED ON REGION WITH ID:" + hexCellRegion.ID);
         action.Activate();
         for (int i = 0; i < action.Effect.ParameterChanges[HexCellRegion.ID].Changes.Length; i++)
         {

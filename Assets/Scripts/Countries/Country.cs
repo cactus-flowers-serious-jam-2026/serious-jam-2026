@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class Country : MonoBehaviour
 {
-    public Region[] _regions { get; private set;  }
+    public Region[] _regions { get; private set; }
     
-    [SerializeField]
-    private int[] regionIDs;
+    //[SerializeField]
+    private int[] regionIDs = new int[480];
     
     public Dictionary<Parameter, float> parameters = new Dictionary<Parameter, float>();
 
@@ -19,6 +19,12 @@ public class Country : MonoBehaviour
     
     void Awake()
     {
+        for(int i = 1; i <  regionIDs.Length; i++)
+            regionIDs[i - 1] = i;
+        
+        _regions = FindObjectsByType<Region>(FindObjectsSortMode.None)
+            .Where(r => regionIDs.Contains(r.ID))
+            .ToArray();
         
         CountryResources = new Dictionary<string, CountryResource>
         {

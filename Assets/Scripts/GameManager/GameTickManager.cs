@@ -58,9 +58,9 @@ public class GameTickManager : MonoBehaviour
             if (totalEvents.Count == 0)Debug.Log("No more events...");
 
 
-            float randomTime = Random.Range(randomTimeMin, randomTimeMax);
+            //float randomTime = Random.Range(randomTimeMin, randomTimeMax);
 
-            myTimer = new SimpleTimer(randomTime);
+            //myTimer = new SimpleTimer(randomTime);
 
         }
 
