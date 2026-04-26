@@ -22,11 +22,13 @@ public class SelectionPresenter : MonoBehaviour
     private void HandleCellSelected()
     {
         model.HandleSelection();
+        AudioEvents.InvokeOnClicked();
     }
 
     private void HandleCellDeselected()
     {
         model.HandleDeselection();
+        AudioEvents.InvokeOnCanceled();
     }
 }
 
