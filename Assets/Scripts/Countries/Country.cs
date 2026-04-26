@@ -24,6 +24,11 @@ public class Country : MonoBehaviour
             { GLOBAL_TAGS.MILITARY_RES_TAG, Resources.Load<CountryResource>("CountryResources/Military") },
             { GLOBAL_TAGS.POLITICAL_RES_TAG, Resources.Load<CountryResource>("CountryResources/Political") }
         };
+
+        foreach (var res in CountryResources)
+        {
+            res.Value.SetCount(0);
+        }
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

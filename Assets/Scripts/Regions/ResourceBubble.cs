@@ -26,8 +26,7 @@ public class ResourceBubble : MonoBehaviour
     {
         this.type = type;
         this.count = count;
-        GetComponent<Button>().image.sprite = ResourcesDatabase.TAG_SPRITE_MAP[type];
-        Debug.Log(type + "\t" + ResourcesDatabase.TAG_SPRITE_MAP[type]);
+        GetComponent<Button>().image.sprite = Resources.Load<CountryResource>(ResourcesDatabase.TAG_SPRITEPATH_MAP[type]).Icon;
         gameObject.SetActive(true);
     }
 
