@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Interest_in_politics
   m_EditorClassIdentifier: Assembly-CSharp::Parameter
   Name: Interest in politics
-  Icon: {fileID: 0}
+  Icon: {fileID: -6290598706216591736, guid: bfc7e86ba3a6a87d5b3d6e54ab149b58, type: 3}
+  Tag: inpol

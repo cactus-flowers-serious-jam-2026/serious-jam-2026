@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Parameter
   Name: World Tension
   Icon: {fileID: 0}
+  Tag: wtn

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Parameter
   Name: Pollution
   Icon: {fileID: 0}
+  Tag: 

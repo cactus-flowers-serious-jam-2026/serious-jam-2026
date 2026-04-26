@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Happines
   m_EditorClassIdentifier: Assembly-CSharp::Parameter
   Name: Happiness
-  Icon: {fileID: 0}
+  Icon: {fileID: 2267314249368087281, guid: 5d629fd03c691d99b94b04a32ed7776c, type: 3}
+  Tag: hap

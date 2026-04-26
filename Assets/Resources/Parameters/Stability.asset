@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Stability
   m_EditorClassIdentifier: Assembly-CSharp::Parameter
   Name: Stability
-  Icon: {fileID: 0}
+  Icon: {fileID: -8067494799159037172, guid: d71d4a4f64116a94f93918d3ac574422, type: 3}
+  Tag: stb

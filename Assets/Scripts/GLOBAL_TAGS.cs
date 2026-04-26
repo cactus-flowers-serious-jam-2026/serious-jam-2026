@@ -13,4 +13,5 @@ public static class GLOBAL_TAGS
     public const string STABILITY_PARAM_TAG = "stb";
     public const string WAR_SUPPORT_PARAM_TAG = "war";
     public const string WORLD_TENSION_PARAM_TAG = "wtn";
+    public const string POLLUTION_PARAM_TAG = "plt";
 }

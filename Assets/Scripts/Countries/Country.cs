@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Events;
 using UnityEngine;
 
 public class Country : MonoBehaviour
@@ -10,7 +11,7 @@ public class Country : MonoBehaviour
     [SerializeField]
     private int[] regionIDs;
     
-    public Dictionary<Parameter, float> parameters;
+    public Dictionary<Parameter, float> parameters = new Dictionary<Parameter, float>();
 
     public Dictionary<string, CountryResource> CountryResources { get; private set; } =
         new Dictionary<string, CountryResource>();
@@ -26,11 +27,17 @@ public class Country : MonoBehaviour
         };
 
         foreach (var res in CountryResources)
-        {
             res.Value.SetCount(0);
-        }
         
-        
+        parameters = new Dictionary<Parameter, float>()
+        {
+            {Resources.Load<Parameter>("Parameters/Pollution"), 0.60f},
+            {Resources.Load<Parameter>("Parameters/Happines"), 0.60f},
+            {Resources.Load<Parameter>("Parameters/Interest_in_politics"), 0.67f},
+            {Resources.Load<Parameter>("Parameters/Stability"), 0.87f},
+            {Resources.Load<Parameter>("Parameters/War_support"), 0.15f},
+            {Resources.Load<Parameter>("Parameters/World_Tension"), 0.69f},
+        };
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,6 +47,17 @@ public class Country : MonoBehaviour
                     .Where(r => regionIDs.Contains(r.ID))
                     .Select(r => r)
                     .ToArray();
+        
+        
+        parameters = new Dictionary<Parameter, float>()
+        {
+            {Resources.Load<Parameter>("Parameters/Pollution"), 0.60f},
+            {Resources.Load<Parameter>("Parameters/Happines"), 0.60f},
+            {Resources.Load<Parameter>("Parameters/Interest_in_politics"), 0.67f},
+            {Resources.Load<Parameter>("Parameters/Stability"), 0.87f},
+            {Resources.Load<Parameter>("Parameters/War_support"), 0.15f},
+            {Resources.Load<Parameter>("Parameters/World_Tension"), CountryManager.instance.startingWorldTension},
+        };
     }
 
     // Update is called once per frame
@@ -68,5 +86,10 @@ public class Country : MonoBehaviour
         for (int i = 1; i < e.ParameterChanges.Length; i++)
             for (int j = 0; j < e.ParameterChanges[i].Changes.Length; j++) 
                 _regions[i].ApplyChange(e.ParameterChanges[i].Changes[j]);
+    }
+
+    private void RecalculateRegionalParameters()
+    {
+        
     }
 }

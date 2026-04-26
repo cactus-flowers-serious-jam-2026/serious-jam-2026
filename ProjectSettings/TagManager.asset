@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - HexMesh
+  - Resource Canvas
   layers:
   - Default
   - TransparentFX

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: War_support
   m_EditorClassIdentifier: Assembly-CSharp::Parameter
   Name: War support
-  Icon: {fileID: 0}
+  Icon: {fileID: 5481483935901309009, guid: d1a32a41c29a5d78492cb5725d3f6211, type: 3}
+  Tag: war

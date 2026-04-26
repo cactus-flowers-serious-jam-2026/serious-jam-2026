@@ -7,6 +7,8 @@ public class CountryManager : MonoBehaviour
     public static CountryManager instance;
     public Country PlayerCountry;
 
+    public float startingWorldTension = 0.65f;
+
     void Awake()
     {
         if (instance == null)

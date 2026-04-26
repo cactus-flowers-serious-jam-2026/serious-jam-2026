@@ -14,6 +14,7 @@ public class CountryParamView : MonoBehaviour
     {
         _countryParameters = new Dictionary<string, Parameter>
         {
+            {GLOBAL_TAGS.POLLUTION_PARAM_TAG, Resources.Load<Parameter>("Parameters/Pollution")},
             {GLOBAL_TAGS.HAPPINESS_PARAM_TAG, Resources.Load<Parameter>("Parameters/Happines")},
             {GLOBAL_TAGS.INTEREST_IN_POLITICS_PARAM_TAG, Resources.Load<Parameter>("Parameters/Interest_in_politics")},
             {GLOBAL_TAGS.STABILITY_PARAM_TAG, Resources.Load<Parameter>("Parameters/Stability")},
@@ -27,7 +28,7 @@ public class CountryParamView : MonoBehaviour
             GameObject parameterDisplay = Instantiate(parameterDisplayPrefab, transform);
             parameterDisplay.GetComponentInChildren<TextMeshProUGUI>().text = "0%";
             parameterDisplay.GetComponentInChildren<Image>().overrideSprite = param.Value.Icon;
-            parameterDisplay.GetComponent<RectTransform>().anchoredPosition =  new Vector2(30 + i * 70f, 0);
+            parameterDisplay.GetComponent<RectTransform>().anchoredPosition =  new Vector2(30 + i * 85f, 0);
             _parameterDisplays.Add(param.Key, parameterDisplay.GetComponentInChildren<TextMeshProUGUI>());
             i++;
         }
@@ -47,8 +48,11 @@ public class CountryParamView : MonoBehaviour
 
     public void Display(Dictionary<Parameter, float> parameters)
     {
-        //foreach (var param in parameters)
-            //if(_parameterDisplays.ContainsKey(param.Key.Tag))
-                //_parameterDisplays[param.Value.Tag].text = param.Value.ToString();      
+        foreach (var param in parameters)
+        {
+            string tag = param.Key.Tag;
+            if (_parameterDisplays.ContainsKey(tag))
+                _parameterDisplays[tag].text = Mathf.RoundToInt(param.Value * 100f) + "%";
+        }      
     }
 }

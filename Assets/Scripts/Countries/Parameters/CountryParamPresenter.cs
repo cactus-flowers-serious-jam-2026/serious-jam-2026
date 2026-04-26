@@ -12,6 +12,7 @@ public class CountryParamPresenter : MonoBehaviour
     {
         PlayerCountry = CountryManager.instance.PlayerCountry;
         ParameterEvents.ParametersChanged.AddListener(OnParametersChanged);
+        OnParametersChanged();
     }
 
     // Update is called once per frame
