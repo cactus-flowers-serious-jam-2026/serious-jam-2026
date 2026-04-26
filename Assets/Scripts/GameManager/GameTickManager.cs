@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,6 +12,21 @@ public class GameTickManager : MonoBehaviour
     public static UnityEvent tickEvent = new UnityEvent();
 
     private SimpleTimer myTimer;
+
+    private List<GameEvent> totalEvents;
+
+    private int randomEventNumber;
+
+    [SerializeField] private float chanceToSpawnEvent;
+
+    [SerializeField] private float randomTimeMin;
+    [SerializeField] private float randomTimeMax;
+    
+    private void Awake()
+    {
+        totalEvents = EventDatabase.GlobalEvents;
+    }
+    
 
 
     void Start()
@@ -29,13 +45,20 @@ public class GameTickManager : MonoBehaviour
         if (isTimerFinished)
         {
             tickEvent.Invoke();
-            int totalEvents = EventDatabase.GlobalEvents.Length;
+            
+            
+            if (totalEvents.Count > 0 && Random.value < chanceToSpawnEvent)
+            {
+                randomEventNumber = Random.Range(0, totalEvents.Count);
+                fireEvent.Invoke(randomEventNumber);
+                AudioEvents.InvokeOnEventPoppedUp();
+                totalEvents.RemoveAt(randomEventNumber);
+            }
+            
+            if (totalEvents.Count == 0)Debug.Log("No more events...");
 
-            int randomEventNumber = Random.Range(0, totalEvents);
 
-            fireEvent.Invoke(randomEventNumber);
-
-            float randomTime = Random.Range(2.5f, 2.5f);
+            float randomTime = Random.Range(randomTimeMin, randomTimeMax);
 
             myTimer = new SimpleTimer(randomTime);
 

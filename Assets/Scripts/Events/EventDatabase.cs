@@ -1,15 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EventDatabase : MonoBehaviour
 {
     [Header("Drag all your Event files here!")]
-    public GameEvent[] inspectorEvents;
 
-    public static GameEvent[] GlobalEvents;
+    public static List<GameEvent> GlobalEvents = new List<GameEvent>();
 
     void Awake()
     {
-        inspectorEvents = Resources.LoadAll<GameEvent>("Events");
-        GlobalEvents = inspectorEvents;
+        var events = Resources.LoadAll<GameEvent>("Events");
+        
+        foreach (var e in events)
+            GlobalEvents.Add(e);
     }
 }
