@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Events;
 
 public class EventPresenter : MonoBehaviour
 {
@@ -95,6 +96,8 @@ public class EventPresenter : MonoBehaviour
                 }
             }
         }
+        
+        ParameterEvents.ParametersChanged.Invoke();
 
         ForceCloseEvent();
     }

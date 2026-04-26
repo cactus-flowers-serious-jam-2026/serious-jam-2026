@@ -5,4 +5,5 @@ public class Parameter : ScriptableObject
 {
     public string Name;
     public Sprite Icon;
+    public string Tag;
 }

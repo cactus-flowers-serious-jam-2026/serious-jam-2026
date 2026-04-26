@@ -10,7 +10,7 @@ public class Country : MonoBehaviour
     [SerializeField]
     private int[] regionIDs;
     
-    private Dictionary<Parameter, float> _parameters;
+    public Dictionary<Parameter, float> parameters;
 
     public Dictionary<string, CountryResource> CountryResources { get; private set; } =
         new Dictionary<string, CountryResource>();
@@ -29,6 +29,8 @@ public class Country : MonoBehaviour
         {
             res.Value.SetCount(0);
         }
+        
+        
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,8 +59,8 @@ public class Country : MonoBehaviour
         for (int i = 0; i < e.ParameterChanges[0].Changes.Length; i++)
         {
             ParameterChange p = e.ParameterChanges[0].Changes[i];
-            if (_parameters.ContainsKey(p.parameter))
-                _parameters[p.parameter] = Math.Clamp(_parameters[p.parameter] + p.change, 0.0f, 1.0f);
+            if (parameters.ContainsKey(p.parameter))
+                parameters[p.parameter] = Math.Clamp(parameters[p.parameter] + p.change, 0.0f, 1.0f);
             
             Debug.Log(p.parameter + " " + p.change);
         }
