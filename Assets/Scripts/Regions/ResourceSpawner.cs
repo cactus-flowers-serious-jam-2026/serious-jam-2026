@@ -60,7 +60,7 @@ public class ResourceSpawner : MonoBehaviour
                                     break;
                                 
                                 case "Interest in politics":
-                                    spawnChance += 0.10f * param.Value;
+                                    spawnChance += 0.01f * param.Value;
                                     break;
                                 
                                 case "Pollution":
@@ -80,11 +80,11 @@ public class ResourceSpawner : MonoBehaviour
                                     break;
                                 
                                 case "Interest in politics":
-                                    spawnChance += 0.10f * param.Value;
+                                    spawnChance += 0.001f * param.Value;
                                     break;
                                 
                                 case "Pollution":
-                                    spawnChance += 0.50f * param.Value;
+                                    spawnChance += 0.005f * param.Value;
                                     break;
                             }
                         }   
@@ -101,11 +101,11 @@ public class ResourceSpawner : MonoBehaviour
                                     break;
                                 
                                 case "Interest in politics":
-                                    spawnChance += 0.10f * param.Value;
+                                    spawnChance += 0.001f * param.Value;
                                     break;
                                 
                                 case "Pollution":
-                                    spawnChance += 0.50f * param.Value;
+                                    spawnChance += 0.009f * param.Value;
                                     break;
                             }
                         }   

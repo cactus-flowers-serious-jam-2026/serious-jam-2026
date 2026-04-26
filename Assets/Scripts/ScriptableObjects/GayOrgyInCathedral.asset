@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fdcd479b444737eb81be6a82be4a0e, type: 3}
   m_Name: GayOrgyInCathedral
   m_EditorClassIdentifier: Assembly-CSharp::Action
-  Description: Order a prostitute
+  Description: Send nuclear bombs here
   Effect: {fileID: 0}
   Timeout: -1
   Active: 0

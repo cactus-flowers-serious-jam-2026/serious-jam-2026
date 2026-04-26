@@ -1189,6 +1189,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 238979432208363330, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
+      propertyPath: parameterEntryPrefab
+      value: 
+      objectReference: {fileID: 1595080894244324696, guid: 6167272fbf93e2b45a21969e0a03c50a, type: 3}
     - target: {fileID: 259015429830710825, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1215,7 +1219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 259015429830710825, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 960
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3425438022886572556, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
       propertyPath: m_Pivot.x
@@ -1337,9 +1341,29 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 6279117842448644731, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279117842448644731, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5943641949438882828, guid: ee8ef0b951f21a112a9cb76e88dbdb22, type: 3}
+    - target: {fileID: 6279117842448644731, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279117842448644731, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7322352831335787091, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
       propertyPath: m_Name
       value: ActionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8385652357667171960, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
