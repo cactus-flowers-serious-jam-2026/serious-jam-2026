@@ -12,6 +12,7 @@ public class ActionPresenter : MonoBehaviour
         SelectionUIEvents.OnCellSelected.AddListener(HandleCellSelected);
         SelectionUIEvents.OnCellDeselected.AddListener(HandleCellDeselected);
         SelectionUIEvents.OnActionChosen.AddListener(HandleActionChosen);
+        SelectionUIEvents.OnRegionSelected.AddListener(HandleRegionSelected);
     }
 
     private void OnDisable()
@@ -19,13 +20,20 @@ public class ActionPresenter : MonoBehaviour
         SelectionUIEvents.OnCellSelected.RemoveListener(HandleCellSelected);
         SelectionUIEvents.OnCellDeselected.RemoveListener(HandleCellDeselected);
         SelectionUIEvents.OnActionChosen.RemoveListener(HandleActionChosen);
+        SelectionUIEvents.OnRegionSelected.RemoveListener(HandleRegionSelected);
+    }
+
+    private void HandleRegionSelected(Region region)
+    {
+        view.DisplayButtons(model.registry.Actions);
+        view.DisplayParameters(region.Parameters);
+        view.DisplayActionPanel();
     }
     
 
     private void HandleCellSelected()
     {
-        view.DisplayButtons(model.registry.Actions);
-        view.DisplayActionPanel();
+
     }
 
     private void HandleCellDeselected()
