@@ -8,13 +8,15 @@ public class GameTickManager : MonoBehaviour
 
     public UnityEvent<int> fireEvent;
 
+    public static UnityEvent tickEvent = new UnityEvent();
+
     private SimpleTimer myTimer;
 
 
     void Start()
     {
 
-        float firstRandomTime = Random.Range(15f , 30f);
+        float firstRandomTime = 2.5f;//Random.Range(15f , 30f);
 
         myTimer = new SimpleTimer(firstRandomTime);
     }
@@ -26,7 +28,7 @@ public class GameTickManager : MonoBehaviour
 
         if (isTimerFinished)
         {
-
+            tickEvent.Invoke();
             int totalEvents = EventDatabase.GlobalEvents.Length;
 
             int randomEventNumber = Random.Range(0, totalEvents);

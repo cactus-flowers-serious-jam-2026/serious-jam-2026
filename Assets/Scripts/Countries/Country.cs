@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Country : MonoBehaviour
 {
-    [SerializeField]
-    private Region[] _regions;
+    public Region[] _regions { get; private set;  }
     
     [SerializeField]
     private int[] regionIDs;
@@ -16,6 +15,16 @@ public class Country : MonoBehaviour
     public Dictionary<string, CountryResource> CountryResources { get; private set; } =
         new Dictionary<string, CountryResource>();
     
+    
+    void Awake()
+    {
+        CountryResources = new Dictionary<string, CountryResource>
+        {
+            { GLOBAL_TAGS.ECOLOGY_RES_TAG,  Resources.Load<CountryResource>("CountryResources/Ecological") },
+            { GLOBAL_TAGS.MILITARY_RES_TAG, Resources.Load<CountryResource>("CountryResources/Military") },
+            { GLOBAL_TAGS.POLITICAL_RES_TAG, Resources.Load<CountryResource>("CountryResources/Political") }
+        };
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,7 +41,7 @@ public class Country : MonoBehaviour
         
     }
 
-    public void OnResourceGathered(string type, int count)
+    public void CollectResource(string type, int count)
     {
         if (CountryResources.ContainsKey(type))
             CountryResources[type].IncreaseCount(count);

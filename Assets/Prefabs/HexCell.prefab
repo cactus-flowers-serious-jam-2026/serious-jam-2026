@@ -120,3 +120,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76145f1e1491977f8aab8de40c890fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Region
+  ID: 0
+  ResourceBubblePrefab: {fileID: 2016718517505776271, guid: c7b68070a03f533f89f8647e74bacafe, type: 3}

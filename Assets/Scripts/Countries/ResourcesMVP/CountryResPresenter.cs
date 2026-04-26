@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CountryResPresenter : MonoBehaviour
@@ -10,7 +11,17 @@ public class CountryResPresenter : MonoBehaviour
     {
         
     }
-    
+
+    private void OnEnable()
+    {
+        ResourceEvents.OnResourceGathered.AddListener(OnResourceCollected);
+    }
+
+    private void OnDisable()
+    {
+        ResourceEvents.OnResourceGathered.RemoveListener(OnResourceCollected);
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,8 +34,11 @@ public class CountryResPresenter : MonoBehaviour
         
     }
     
-    public void OnResourceGathered(string type, int count)
+    public void OnResourceCollected(string type, int count)
     {
+        Debug.Log(PlayerCountry);
+        Debug.Log(type + ": " + count);
+        PlayerCountry.CollectResource(type, count);
         CountryResourceView.Display(PlayerCountry.CountryResources);
     }
 }

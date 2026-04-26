@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Image = UnityEngine.UIElements.Image;
@@ -7,24 +8,28 @@ using Random = UnityEngine.Random;
 
 public class ResourceSpawner : MonoBehaviour
 {
-    private Region _region;
-    private Dictionary<string, float> _spawnChances;
+    private Region[] _regions;
+    //private Dictionary<string, float> _spawnChances;
     private Queue<string> _bubblesQueue;
     
-    [SerializeField]
-    private ResourceBubble _resourceBubblePrefab;
+    private readonly string[] _resources = {GLOBAL_TAGS.ECOLOGY_RES_TAG, GLOBAL_TAGS.MILITARY_RES_TAG, GLOBAL_TAGS.POLITICAL_RES_TAG};
 
-    private static Canvas _popupsCanvas;
+    public static Canvas ResourceCanvas;
+
+    //private static Canvas _popupsCanvas;
 
     private void Awake()
     {
-        
+        ResourceCanvas = FindObjectsByType<Canvas>(FindObjectsSortMode.None).First(c => c.CompareTag("Resource Canvas"));
+        Debug.Log("Found Resource Canvas: " + ResourceCanvas.tag);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GameTickManager.tickEvent.AddListener(OnTickEvent);
+        _regions = FindObjectsByType<Region>(FindObjectsSortMode.None)
+            .Where(r => CountryManager.instance.PlayerCountry._regions.Contains(r)).ToArray();
     }
 
     // Update is called once per frame
@@ -35,26 +40,98 @@ public class ResourceSpawner : MonoBehaviour
 
     private void OnTickEvent()
     {
-        foreach (var resource in _spawnChances)
+        Debug.Log("Tick");
+        foreach (var region in  _regions)
         {
-            float roll = Random.value;
-            if (roll <= resource.Value)
-                _bubblesQueue.Enqueue(resource.Key);
-        }
+            foreach (var resource in _resources)
+            {
+                float spawnChance = 0.0f;
+                
+                switch (resource)
+                {
+                    case GLOBAL_TAGS.ECOLOGY_RES_TAG:
+                        Debug.Log(GLOBAL_TAGS.ECOLOGY_RES_TAG);
+                        Debug.Log(region.Parameters.Count);
+                        foreach (var param in region.Parameters)
+                        {
+                            Debug.Log(param.Key.Name + "\t" + GLOBAL_TAGS.ECOLOGY_RES_TAG);
+                            switch (param.Key.Name)
+                            {
+                                case "Happiness":
+                                    Debug.Log("Penis check parameter");
+                                    spawnChance += 0.001f * (1 - param.Value);
+                                    break;
+                                
+                                case "Interest in politics":
+                                    spawnChance += 1.10f * param.Value;
+                                    break;
+                                
+                                case "Pollution":
+                                    spawnChance += 0.00f * param.Value;
+                                    break;
+                            }
+                            Debug.Log(param.Key + "\t" + param.Value + "\t" + region.ID);
+                        }                        
+                        break;
 
+                    case GLOBAL_TAGS.MILITARY_RES_TAG:
+                        Debug.Log(GLOBAL_TAGS.MILITARY_RES_TAG);
+                        foreach (var param in region.Parameters)
+                        {
+                            switch (param.Key.Name)
+                            {
+                                case "Happiness":
+                                    spawnChance += 0.001f * (1 - param.Value);
+                                    break;
+                                
+                                case "Interest in politics":
+                                    spawnChance += 0.10f * param.Value;
+                                    break;
+                                
+                                case "Pollution":
+                                    spawnChance += 0.50f * param.Value;
+                                    break;
+                            }
+                        }   
+                        break;
+                    
+                    case GLOBAL_TAGS.POLITICAL_RES_TAG:
+                        Debug.Log(GLOBAL_TAGS.POLITICAL_RES_TAG);
+                        foreach (var param in region.Parameters)
+                        {
+                            switch (param.Key.Name)
+                            {
+                                case "Happiness":
+                                    spawnChance += 0.001f * (1 - param.Value);
+                                    break;
+                                
+                                case "Interest in politics":
+                                    spawnChance += 0.10f * param.Value;
+                                    break;
+                                
+                                case "Pollution":
+                                    spawnChance += 0.50f * param.Value;
+                                    break;
+                            }
+                        }   
+                        break;
+                }
+                
+                float roll = Random.value;
+                Debug.Log(roll + "\t" + spawnChance + "\t" + resource);
+                
+                if (roll <= spawnChance)
+                    region.SpawnResource(resource, Random.Range(5, 15));
+                    //_bubblesQueue.Enqueue(resource);
+            }
+        }
+        
+
+        /*
         if (_bubblesQueue.Count != 0)
         {
             SpawnResourceBubble(_bubblesQueue.Dequeue());
         }
-    }
-
-    private void SpawnResourceBubble(string type)
-    {
-        ResourceBubble bubble = Instantiate(_resourceBubblePrefab, _region.transform);
-        bubble.type = type;
-        bubble.count = Random.Range(5, 15);
-        bubble.icon = Resources.Load<Sprite>("Sprites/" + type);
-        bubble.GetComponentInChildren<Image>().sprite = bubble.icon;
-        bubble.Follow = transform;
+        */
     }
 }
