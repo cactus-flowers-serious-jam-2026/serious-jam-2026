@@ -3,7 +3,7 @@ using UnityEngine;
 public static class HexMetrics
 {
     // controls the size of hexagons (note: remember to change the SelectionHex scaling to OR*2 for sprite and OR * 0.8 for mask
-    public const float OuterRadius = 1.0f;
+    public const float OuterRadius = 0.895f;
     public const float InnerRadius = OuterRadius * 0.866025404f;
     
     public static Vector3[] CornersPointy = {
