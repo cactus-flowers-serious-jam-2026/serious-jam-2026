@@ -12,7 +12,6 @@ public class ResourceBubble : MonoBehaviour
     private void Awake()
     {
         resourceBubbleButton = GetComponent<Button>();
-        Debug.Log("Resource bubble button present");
     }
     void Start()
     {
@@ -28,6 +27,7 @@ public class ResourceBubble : MonoBehaviour
         this.type = type;
         this.count = count;
         GetComponent<Button>().image.sprite = ResourcesDatabase.TAG_SPRITE_MAP[type];
+        Debug.Log(type + "\t" + ResourcesDatabase.TAG_SPRITE_MAP[type]);
         gameObject.SetActive(true);
     }
 
