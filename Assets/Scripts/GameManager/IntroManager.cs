@@ -28,6 +28,12 @@ public class IntroManager : MonoBehaviour
         ShowNextLine();
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.Space))
+            ShowNextLine();
+    }
+
     public void ShowNextLine()
     {
         if (isTyping)
