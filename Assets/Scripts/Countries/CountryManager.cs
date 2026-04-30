@@ -4,10 +4,8 @@ using UnityEngine;
 public class CountryManager : MonoBehaviour
 {
     public static Dictionary<string, Country> Countries { get; private set; } = new Dictionary<string, Country>();
-    public static CountryManager instance;
+    public static CountryManager instance { get; private set; }
     public Country PlayerCountry;
-
-    public float startingWorldTension = 0.65f;
 
     void Awake()
     {

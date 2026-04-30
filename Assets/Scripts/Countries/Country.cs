@@ -42,8 +42,7 @@ public class Country : MonoBehaviour
             {Resources.Load<Parameter>("Parameters/Happines"), 0.60f},
             {Resources.Load<Parameter>("Parameters/Interest_in_politics"), 0.67f},
             {Resources.Load<Parameter>("Parameters/Stability"), 0.87f},
-            {Resources.Load<Parameter>("Parameters/War_support"), 0.15f},
-            {Resources.Load<Parameter>("Parameters/World_Tension"), 0.69f},
+            {Resources.Load<Parameter>("Parameters/War_support"), 0.15f}
         };
     }
     
@@ -62,8 +61,7 @@ public class Country : MonoBehaviour
             {Resources.Load<Parameter>("Parameters/Happines"), 0.60f},
             {Resources.Load<Parameter>("Parameters/Interest_in_politics"), 0.67f},
             {Resources.Load<Parameter>("Parameters/Stability"), 0.87f},
-            {Resources.Load<Parameter>("Parameters/War_support"), 0.15f},
-            {Resources.Load<Parameter>("Parameters/World_Tension"), CountryManager.instance.startingWorldTension},
+            {Resources.Load<Parameter>("Parameters/War_support"), 0.15f}
         };
     }
 
