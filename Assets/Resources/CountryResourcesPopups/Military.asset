@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be4158e72d7796d5bb1bebeac3e6544b, type: 3}
-  m_Name: Political
+  m_Name: Military
   m_EditorClassIdentifier: Assembly-CSharp::CountryResource
-  Name: Political
-  Icon: {fileID: 21300000, guid: fd70ba52c17d18f40955f3542e748759, type: 3}
+  Name: Military
+  Icon: {fileID: -5951715549879401630, guid: 29ac1c70826cc01ef9e5c8c2ed80b566, type: 3}
   Count: 0
   MaxCount: 200

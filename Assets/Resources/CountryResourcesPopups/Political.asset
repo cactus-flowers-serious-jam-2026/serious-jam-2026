@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Political
   m_EditorClassIdentifier: Assembly-CSharp::CountryResource
   Name: Political
-  Icon: {fileID: 21300000, guid: fd70ba52c17d18f40955f3542e748759, type: 3}
+  Icon: {fileID: 3513523249480329808, guid: 9600dbcf56f00566f9131c4cede3b631, type: 3}
   Count: 0
   MaxCount: 200

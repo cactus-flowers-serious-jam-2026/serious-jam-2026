@@ -24,7 +24,7 @@ public class CountryResView : MonoBehaviour
             GameObject resourceDisplay = Instantiate(resourceDisplayPrefab, transform);
             resourceDisplay.GetComponentInChildren<TextMeshProUGUI>().text = resource.Value.GetCount().ToString();
             resourceDisplay.GetComponentInChildren<Image>().overrideSprite = resource.Value.Icon;
-            resourceDisplay.GetComponent<RectTransform>().anchoredPosition =  new Vector2(30 + i * 70f, 0);
+            resourceDisplay.GetComponent<RectTransform>().anchoredPosition =  new Vector2(80 + i * 130f, 0);
             _resourceDisplays.Add(resource.Key, resourceDisplay.GetComponentInChildren<TextMeshProUGUI>());
             i++;
         }

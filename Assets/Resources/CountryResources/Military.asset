@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Military
   m_EditorClassIdentifier: Assembly-CSharp::CountryResource
   Name: Military
-  Icon: {fileID: 9000319960787565979, guid: a00f62df68922c6588b6d8c2f25d14cb, type: 3}
+  Icon: {fileID: 21300000, guid: 521cc3c0c174e4d43ba124cd8eae40e2, type: 3}
   Count: 0
   MaxCount: 200
