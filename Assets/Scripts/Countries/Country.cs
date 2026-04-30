@@ -11,7 +11,8 @@ public class Country : MonoBehaviour
     //[SerializeField]
     private int[] regionIDs = new int[480];
     
-    public Dictionary<Parameter, float> parameters = new Dictionary<Parameter, float>();
+    public Dictionary<Parameter, float> parameters { get; private set; } = new Dictionary<Parameter, float>();
+    private Dictionary<Parameter, float> parameters_temp;
 
     public Dictionary<string, CountryResource> CountryResources { get; private set; } =
         new Dictionary<string, CountryResource>();
@@ -44,6 +45,7 @@ public class Country : MonoBehaviour
             {Resources.Load<Parameter>("Parameters/Stability"), 0.87f},
             {Resources.Load<Parameter>("Parameters/War_support"), 0.15f}
         };
+        parameters_temp = new Dictionary<Parameter, float>(parameters);
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -53,22 +55,12 @@ public class Country : MonoBehaviour
                     .Where(r => regionIDs.Contains(r.ID))
                     .Select(r => r)
                     .ToArray();
-        
-        
-        parameters = new Dictionary<Parameter, float>()
-        {
-            {Resources.Load<Parameter>("Parameters/Pollution"), 0.60f},
-            {Resources.Load<Parameter>("Parameters/Happines"), 0.60f},
-            {Resources.Load<Parameter>("Parameters/Interest_in_politics"), 0.67f},
-            {Resources.Load<Parameter>("Parameters/Stability"), 0.87f},
-            {Resources.Load<Parameter>("Parameters/War_support"), 0.15f}
-        };
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        RecalculateRegionalParameters();
     }
 
     public void CollectResource(string type, int count)
@@ -95,6 +87,20 @@ public class Country : MonoBehaviour
 
     private void RecalculateRegionalParameters()
     {
-        
+        foreach (var parameter in parameters.Keys)
+        {
+            if(!_regions[0].Parameters.ContainsKey(parameter)) // if a parameter is a global country param
+                return;
+            
+            float sum = 0.0f;
+            foreach (var region in _regions)
+                sum += region.Parameters[parameter];
+            sum /= _regions.Length;
+            parameters_temp[parameter] = sum;
+            Debug.Log("Recalculated: " + parameter.Name + " " + sum);
+        }
+
+        parameters = new Dictionary<Parameter, float>(parameters_temp);
+        ParameterEvents.ParametersChanged.Invoke();
     }
 }

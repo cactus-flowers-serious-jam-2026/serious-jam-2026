@@ -19,7 +19,6 @@ public class CountryParamView : MonoBehaviour
             {GLOBAL_TAGS.INTEREST_IN_POLITICS_PARAM_TAG, Resources.Load<Parameter>("Parameters/Interest_in_politics")},
             {GLOBAL_TAGS.STABILITY_PARAM_TAG, Resources.Load<Parameter>("Parameters/Stability")},
             {GLOBAL_TAGS.WAR_SUPPORT_PARAM_TAG, Resources.Load<Parameter>("Parameters/War_support")},
-            {GLOBAL_TAGS.WORLD_TENSION_PARAM_TAG, Resources.Load<Parameter>("Parameters/World_Tension")}
         };
 
         int i = 0;
