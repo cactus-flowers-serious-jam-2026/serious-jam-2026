@@ -27,7 +27,8 @@ public class CameraMover : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y - moveSpeed * Time.deltaTime, transform.position.z);
         if (mousePos.y >= Screen.height - 1)
             transform.position = new Vector3(transform.position.x, transform.position.y + moveSpeed * Time.deltaTime, transform.position.z);
-
+        
+        
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
             float fov = Camera.main.orthographicSize;
@@ -35,5 +36,14 @@ public class CameraMover : MonoBehaviour
             fov = Mathf.Clamp(fov, minFov, maxFov);
             Camera.main.orthographicSize = fov;
         }
+        
+        if(Input.GetKey(KeyCode.W))
+            transform.position = new Vector3(transform.position.x, transform.position.y + moveSpeed * Time.deltaTime, transform.position.z);
+        if(Input.GetKey(KeyCode.A))
+            transform.position = new Vector3(transform.position.x - moveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
+        if(Input.GetKey(KeyCode.S))
+            transform.position = new Vector3(transform.position.x, transform.position.y -  moveSpeed * Time.deltaTime, transform.position.z);
+        if(Input.GetKey(KeyCode.D))
+            transform.position = new Vector3(transform.position.x + moveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
     }
 }
