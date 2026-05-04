@@ -55,7 +55,7 @@ public class ResourceSpawner : MonoBehaviour
                             switch (param.Key.Name)
                             {
                                 case "Happiness":
-                                    Debug.Log("Penis check parameter");
+                                    //Debug.Log("Penis check parameter");
                                     spawnChance += 0.001f * (1 - param.Value);
                                     break;
                                 
@@ -91,7 +91,7 @@ public class ResourceSpawner : MonoBehaviour
                         break;
                     
                     case GLOBAL_TAGS.POLITICAL_RES_TAG:
-                        Debug.Log(GLOBAL_TAGS.POLITICAL_RES_TAG);
+                        //Debug.Log(GLOBAL_TAGS.POLITICAL_RES_TAG);
                         foreach (var param in region.Parameters)
                         {
                             switch (param.Key.Name)

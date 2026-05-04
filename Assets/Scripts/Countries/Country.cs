@@ -60,7 +60,7 @@ public class Country : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RecalculateRegionalParameters();
+        //RecalculateRegionalParameters();
     }
 
     public void CollectResource(string type, int count)
@@ -71,13 +71,18 @@ public class Country : MonoBehaviour
 
     public void ApplyEffect(Effect e)
     {
-        for (int i = 0; i < e.ParameterChanges[0].Changes.Length; i++)
+        for (int k = 0; k < e.ParameterChanges.Length; k++)
         {
-            ParameterChange p = e.ParameterChanges[0].Changes[i];
-            if (parameters.ContainsKey(p.parameter))
-                parameters[p.parameter] = Math.Clamp(parameters[p.parameter] + p.change, 0.0f, 1.0f);
-            
-            Debug.Log(p.parameter + " " + p.change);
+            for (int i = 0; i < e.ParameterChanges[k].Changes.Length; i++)
+            {
+                ParameterChange p = e.ParameterChanges[k].Changes[i];
+                if (parameters.ContainsKey(p.parameter))
+                    parameters[p.parameter] = Math.Clamp(parameters[p.parameter] + p.change, 0.0f, 1.0f);
+                else
+                    GameManager.IncreaseWorldTension(p.change);
+
+                Debug.Log(p.parameter + " " + p.change);
+            }
         }
 
         for (int i = 1; i < e.ParameterChanges.Length; i++)

@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float TensionMaximumThreshold = 0.90f;
     [SerializeField] private float TensionMinimumThreshold = 0.10f;
     [SerializeField] private float TensionPerTick = 0.005f;
+
+    [SerializeField] private TextMeshProUGUI tension_text;
 
     void Awake()
     {
@@ -43,6 +46,8 @@ public class GameManager : MonoBehaviour
         CurrentDate = CurrentDate.AddDays(DaysPerTick);
         WorldTension += TensionPerTick;
 
+        tension_text.text = (WorldTension * 100).ToString("F2") + "%";
+        
         if (WorldTension > TensionMaximumThreshold)
         {
             Debug.Log("YOU LOST");
@@ -52,6 +57,11 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("YOU WON");
         }
+    }
+
+    public static void IncreaseWorldTension(float x)
+    {
+        WorldTension = Math.Clamp(x, 0.0f, 1.0f);
     }
     
 }
