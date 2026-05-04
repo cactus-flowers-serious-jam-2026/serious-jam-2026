@@ -59,7 +59,8 @@ public class ActionView : MonoBehaviour
         foreach (var kvp in parameters)
         {
             TMP_Text entry = Instantiate(parameterEntryPrefab, parameterContainer.transform);
-            entry.text = $"{kvp.Key.name}: {kvp.Value:F2}";
+            entry.text = $"{kvp.Key.name}: {(int)(kvp.Value * 100)}%";
+            entry.color = new Color32(50, 50, 50, 255);
         }
     }
 }
