@@ -16,10 +16,10 @@ MonoBehaviour:
   ParameterChanges:
   - Changes:
     - parameter: {fileID: 11400000, guid: 5192d0b480eb7bf42b70fb3bb1830bad, type: 2}
-      change: 0
+      change: 0.05
   - Changes:
     - parameter: {fileID: 11400000, guid: d6fd54933f6285045bfc3c65709bf0b6, type: 2}
-      change: 0
+      change: -0.05
   - Changes:
     - parameter: {fileID: 11400000, guid: 20d0c0544d1836b42ab9f0d57a300109, type: 2}
-      change: 0
+      change: 0.05
