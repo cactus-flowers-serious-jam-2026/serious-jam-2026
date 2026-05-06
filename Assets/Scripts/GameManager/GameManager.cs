@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float TensionMinimumThreshold = 0.10f;
     [SerializeField] private float TensionPerTick = 0.005f;
 
-    [SerializeField] private TextMeshProUGUI tension_text;
+    //[SerializeField] private TextMeshProUGUI tension_text;
+    [SerializeField] private Image tensionMeter;
 
     void Awake()
     {
@@ -46,7 +48,8 @@ public class GameManager : MonoBehaviour
         CurrentDate = CurrentDate.AddDays(DaysPerTick);
         WorldTension += TensionPerTick;
 
-        tension_text.text = (WorldTension * 100).ToString("F2") + "%";
+        tensionMeter.fillAmount = WorldTension;
+        //tension_text.text = (WorldTension * 100).ToString("F2") + "%";
         
         if (WorldTension > TensionMaximumThreshold)
         {
@@ -61,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public static void IncreaseWorldTension(float x)
     {
-        WorldTension = Math.Clamp(x, 0.0f, 1.0f);
+        WorldTension = Math.Clamp(WorldTension + x, 0.0f, 1.0f);
     }
     
 }

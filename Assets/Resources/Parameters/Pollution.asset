@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Pollution
   m_EditorClassIdentifier: Assembly-CSharp::Parameter
   Name: Pollution
-  Icon: {fileID: 0}
+  Icon: {fileID: -8498962393827619186, guid: a1530cf61a1824fbba52a1ba19f60239, type: 3}
   Tag: 
