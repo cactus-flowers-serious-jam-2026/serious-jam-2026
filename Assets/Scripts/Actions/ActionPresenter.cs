@@ -43,7 +43,8 @@ public class ActionPresenter : MonoBehaviour
     
     private void HandleActionChosen(Action action)
     {
-        action.Activate();
+        model.HandleActionChosen(action);
+        //action.Activate();
     }
     
 }

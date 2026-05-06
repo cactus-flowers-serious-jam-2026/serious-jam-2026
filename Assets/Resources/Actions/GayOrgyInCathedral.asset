@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: GayOrgyInCathedral
   m_EditorClassIdentifier: Assembly-CSharp::Action
   Description: Send nuclear bombs here
-  Effect: {fileID: 0}
+  Effect: {fileID: 11400000, guid: 55d77f62abc05f1cab7591a23e3f2f0b, type: 2}
   Timeout: -1
+  Cost: []
   Active: 0
   ActionID: GayOrgyInCathedral

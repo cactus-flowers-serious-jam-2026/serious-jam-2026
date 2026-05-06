@@ -8,8 +8,8 @@ public class HexModel : MonoBehaviour
     public Region HexCellRegion => hexCellRegion;
     
     [SerializeField] private Region hexCellRegion;
-    
-    
+
+    [SerializeField] private Country PlayerCountry;
     
     public HexCell SelectedCell {  get; private set; }
 
@@ -55,11 +55,20 @@ public class HexModel : MonoBehaviour
 
     public void HandleActionChosen(Action action) // DONT TOOUCH
     {
+        foreach (var countryRes in PlayerCountry.CountryResources)
+            foreach (var actionResCost in action.Cost)
+                if (actionResCost.resourceTag == countryRes.Key)
+                    if (actionResCost.cost > countryRes.Value.GetCount()) 
+                    {
+                        Debug.Log("Not enough resources for this action!");
+                        return;
+                    }
+        
+        
         hexCellRegion = SelectedCell.gameObject.GetComponent<Region>();
         action.Activate();
-        for (int i = 0; i < action.Effect.ParameterChanges[HexCellRegion.ID].Changes.Length; i++)
-        {
-            HexCellRegion.ApplyChange(action.Effect.ParameterChanges[HexCellRegion.ID].Changes[i]);
-        }
+        for (int i = 0; i < action.Effect.ParameterChanges.Length; i++)
+            for(int j = 0; j < action.Effect.ParameterChanges[i].Changes.Length; j++)
+                HexCellRegion.ApplyChange(action.Effect.ParameterChanges[i].Changes[j]);
     }
 }

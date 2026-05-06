@@ -1,13 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct ActionCost
+{
+    public string resourceTag;
+    public int cost;
+}
+
 [CreateAssetMenu(fileName = "Action", menuName = "Scriptable Objects/Action")]
 public class Action : ScriptableObject
 {
     public string Description;
     public Effect Effect;
     public int Timeout; // -1 - means one-time action, 0 - no timeout, 1+ - timeout in ticks 
-    public Dictionary<Parameter, int> Cost;
+    public ActionCost[] Cost;
     public bool Active = true;
     private int timeoutCounter;
     public string ActionID;

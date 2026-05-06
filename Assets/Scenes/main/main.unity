@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5166703308593827080, guid: b5514afb151ace9108645faf13aa8c84, type: 3}
+      propertyPath: PlayerCountry
+      value: 
+      objectReference: {fileID: 1509897983}
     - target: {fileID: 5331314528060272469, guid: b5514afb151ace9108645faf13aa8c84, type: 3}
       propertyPath: m_Name
       value: HexGrid
@@ -790,6 +794,8 @@ MonoBehaviour:
   minFov: 1
   maxFov: 15
   zoomSpeed: 1
+  border_x: 40
+  border_y: 25
 --- !u!1001 &752441486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1835,6 +1841,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ActionCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8389534522329194882, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
+      propertyPath: hexModel
+      value: 
+      objectReference: {fileID: 23693453}
     - target: {fileID: 8682984382005104025, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
       propertyPath: m_ChildControlHeight
       value: 1
