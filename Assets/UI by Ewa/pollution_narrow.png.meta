@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 0d6306e2b9ac64e4da53529649d56502
+guid: b19622692b43e2835b32a318868a388b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1458566460655685380
-    second: pollution small_0
-  - first:
-      213: -475727164543101878
-    second: pollution small_1
+      213: -4606308330994290968
+    second: pollution_narrow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -99,39 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pollution small_0
+      name: pollution_narrow_0
       rect:
         serializedVersion: 2
         x: 2
-        y: 56
-        width: 342
-        height: 94
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 40f4ea8d77edd3410800000000000000
-      internalID: 1458566460655685380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pollution small_1
-      rect:
-        serializedVersion: 2
-        x: 16
         y: 3
-        width: 46
-        height: 46
+        width: 342
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a4497631aa0e569f0800000000000000
-      internalID: -475727164543101878
+      spriteID: 8eea92d6afa1310c0800000000000000
+      internalID: -4606308330994290968
       vertices: []
       indices: 
       edges: []
@@ -150,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pollution small_0: 1458566460655685380
-      pollution small_1: -475727164543101878
+      pollution_narrow_0: -4606308330994290968
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
