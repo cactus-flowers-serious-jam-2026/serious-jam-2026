@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     //[SerializeField] private TextMeshProUGUI tension_text;
     [SerializeField] private Image tensionMeter;
+    
+    [SerializeField] private TextMeshProUGUI dateText;
 
     void Awake()
     {
@@ -46,8 +48,9 @@ public class GameManager : MonoBehaviour
     private void OnTick()
     {
         CurrentDate = CurrentDate.AddDays(DaysPerTick);
+        dateText.text = CurrentDate.ToString("dd.MM.yyyy");
+        
         WorldTension += TensionPerTick;
-
         tensionMeter.fillAmount = WorldTension;
         //tension_text.text = (WorldTension * 100).ToString("F2") + "%";
         
