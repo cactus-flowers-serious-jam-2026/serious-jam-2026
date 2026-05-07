@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image tensionMeter;
     
     [SerializeField] private TextMeshProUGUI dateText;
+    
+    [SerializeField] public SceneLoader sceneLoader;
 
     void Awake()
     {
@@ -63,11 +65,15 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("YOU WON");
         }
+
+        if (CurrentDate.Year >= 2056)
+        {
+            Debug.Log("YOU WON");
+        }
     }
 
     public static void IncreaseWorldTension(float x)
     {
         WorldTension = Math.Clamp(WorldTension + x, 0.0f, 1.0f);
     }
-    
 }
