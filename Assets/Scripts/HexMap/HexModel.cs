@@ -64,6 +64,8 @@ public class HexModel : MonoBehaviour
                         return;
                     }
         
+        foreach (var actionResCost in action.Cost)
+            PlayerCountry.CountryResources[actionResCost.resourceTag].IncreaseCount(-actionResCost.cost);
         
         hexCellRegion = SelectedCell.gameObject.GetComponent<Region>();
         action.Activate();
