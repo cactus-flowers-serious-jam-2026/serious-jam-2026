@@ -22,7 +22,12 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI dateText;
     
-    [SerializeField] public SceneLoader sceneLoader;
+    [SerializeField] private SceneTransition fader;
+    [SerializeField] private String[] endingSceneNames; 
+    /*  0 - lose due to tension
+        1 - win due to tension
+        2 - win due to time
+     */
 
     void Awake()
     {
@@ -59,16 +64,19 @@ public class GameManager : MonoBehaviour
         if (WorldTension > TensionMaximumThreshold)
         {
             Debug.Log("YOU LOST");
+            fader.LoadNextScene(endingSceneNames[0]);
         }
 
         if (WorldTension < TensionMinimumThreshold)
         {
             Debug.Log("YOU WON");
+            fader.LoadNextScene(endingSceneNames[1]);
         }
 
         if (CurrentDate.Year >= 2056)
         {
             Debug.Log("YOU WON");
+            fader.LoadNextScene(endingSceneNames[2]);
         }
     }
 

@@ -44,6 +44,7 @@ public class ActionPresenter : MonoBehaviour
     private void HandleActionChosen(Action action)
     {
         model.HandleActionChosen(action);
+        ResourceEvents.OnResourceGathered.Invoke("eco", 0);
         //action.Activate();
     }
     

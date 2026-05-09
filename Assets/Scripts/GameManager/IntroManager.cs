@@ -22,6 +22,8 @@ public class IntroManager : MonoBehaviour
     private bool isTyping = false;
     private Coroutine typingCoroutine;
 
+    [SerializeField] private SceneTransition faderCanvas;
+
     void Start()
     {
         dialogueText.text = "- ";
@@ -53,7 +55,8 @@ public class IntroManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(nextSceneName);
+            //SceneManager.LoadScene(nextSceneName);
+            faderCanvas.LoadNextScene(nextSceneName);
         }
     }
 
