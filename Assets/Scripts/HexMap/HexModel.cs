@@ -39,7 +39,7 @@ public class HexModel : MonoBehaviour
     }
     
     void TouchCell (Vector3 position) {
-        position = transform.InverseTransformPoint(position);
+        position = HexGrid.transform.InverseTransformPoint(position); 
         HexCoordinates coordinates = HexCoordinates.FromPosition(position);
         
         Debug.Log("touched at " + coordinates);
