@@ -578,7 +578,7 @@ RectTransform:
   m_AnchoredPosition: {x: 100, y: 100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &414251590
+--- !u!1001 &529996436
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -828,7 +828,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -853,7 +853,7 @@ Transform:
   m_GameObject: {fileID: 599698670}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.9, y: 2.35, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1917,7 +1917,7 @@ MonoBehaviour:
   TensionPerTick: 0.005
   tensionMeter: {fileID: 597557269}
   dateText: {fileID: 1069038090}
-  fader: {fileID: 0}
+  fader: {fileID: 2033048303}
   endingSceneNames: []
 --- !u!114 &1505083030 stripped
 MonoBehaviour:
@@ -2352,6 +2352,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
+--- !u!114 &2033048303 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8131916591991464583, guid: 04a5a8e4a7a40214fb29246b6c20a4b4, type: 3}
+  m_PrefabInstance: {fileID: 529996436}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbce36866ad273d41b88e2e19e769288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
 --- !u!1001 &1446886460110697890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2463,8 +2474,8 @@ SceneRoots:
   - {fileID: 752441486}
   - {fileID: 773516965}
   - {fileID: 1509897984}
+  - {fileID: 529996436}
   - {fileID: 176768474}
   - {fileID: 1059204527}
   - {fileID: 1999096467}
   - {fileID: 679634021}
-  - {fileID: 414251590}
