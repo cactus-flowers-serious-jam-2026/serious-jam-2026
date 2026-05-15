@@ -25,7 +25,10 @@ public class ActionPresenter : MonoBehaviour
 
     private void HandleRegionSelected(Region region)
     {
-        view.DisplayButtons(model.registry.Actions);
+        if (CountryManager.CountryRegions["Poland"].Contains(region.ID))
+            view.DisplayButtons(model.registry[0].Actions);
+        else // Germany
+            view.DisplayButtons(model.registry[1].Actions);
         view.DisplayParameters(region.Parameters);
         view.DisplayActionPanel();
     }

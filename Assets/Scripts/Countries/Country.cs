@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class Country : MonoBehaviour
 {
-    public Region[] _regions { get; private set; }
+    [SerializeField]
+    private string Name;
     
-    //[SerializeField]
-    private int[] regionIDs = new int[480];
+    public Region[] _regions { get; private set; }
     
     public Dictionary<Parameter, float> parameters { get; private set; } = new Dictionary<Parameter, float>();
     private Dictionary<Parameter, float> parameters_temp;
@@ -20,13 +20,6 @@ public class Country : MonoBehaviour
     
     void Awake()
     {
-        for(int i = 1; i <  regionIDs.Length; i++)
-            regionIDs[i - 1] = i;
-        
-        _regions = FindObjectsByType<Region>(FindObjectsSortMode.None)
-            .Where(r => regionIDs.Contains(r.ID))
-            .ToArray();
-        
         CountryResources = new Dictionary<string, CountryResource>
         {
             { GLOBAL_TAGS.ECOLOGY_RES_TAG,  Resources.Load<CountryResource>("CountryResources/Ecological") },
@@ -52,9 +45,8 @@ public class Country : MonoBehaviour
     void Start()
     {
         _regions = FindObjectsByType<Region>(FindObjectsSortMode.None)
-                    .Where(r => regionIDs.Contains(r.ID))
-                    .Select(r => r)
-                    .ToArray();
+            .Where(r => CountryManager.CountryRegions[Name].Contains(r.ID))
+            .ToArray();
     }
 
     // Update is called once per frame

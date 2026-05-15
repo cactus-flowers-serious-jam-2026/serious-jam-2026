@@ -1776,6 +1776,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d4952a9e6535ca3bbfa26d9b8748773, type: 3}
+--- !u!1 &1435964903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435964905}
+  - component: {fileID: 1435964904}
+  m_Layer: 0
+  m_Name: Germany
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1435964904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435964903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0755cf85a09dc5fd2a51bc35f4d2a771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Country
+  Name: Germany
+--- !u!4 &1435964905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435964903}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.72251, y: -1.4662, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1443081030 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2643012223386148361, guid: a9ec885803813628b939ed5c71db78f0, type: 3}
@@ -1963,6 +2008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0755cf85a09dc5fd2a51bc35f4d2a771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Country
+  Name: Poland
 --- !u!4 &1509897984
 Transform:
   m_ObjectHideFlags: 0
@@ -2347,6 +2393,18 @@ PrefabInstance:
       propertyPath: hexModel
       value: 
       objectReference: {fileID: 23693453}
+    - target: {fileID: 8389534522329194882, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
+      propertyPath: registry.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389534522329194882, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
+      propertyPath: 'registry.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6160ce4e346eaa2468cb91cb0889b997, type: 2}
+    - target: {fileID: 8389534522329194882, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
+      propertyPath: 'registry.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b41ebb777faa1759590a2545867f956a, type: 2}
     - target: {fileID: 8682984382005104025, guid: e3718258ace8763d7a36cbd1a8a01d6d, type: 3}
       propertyPath: m_ChildControlHeight
       value: 1
@@ -2478,6 +2536,7 @@ SceneRoots:
   - {fileID: 752441486}
   - {fileID: 773516965}
   - {fileID: 1509897984}
+  - {fileID: 1435964905}
   - {fileID: 529996436}
   - {fileID: 176768474}
   - {fileID: 1059204527}

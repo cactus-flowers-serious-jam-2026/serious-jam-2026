@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ActionModel : MonoBehaviour
 {
-    [SerializeField] public ActionRegistry registry;
+    [SerializeField] public ActionRegistry[] registry;
     public Dictionary<String, Action> actions { get; private set; }
     
     [SerializeField] private HexModel hexModel;

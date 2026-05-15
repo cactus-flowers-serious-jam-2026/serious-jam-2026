@@ -18,14 +18,16 @@ public class CountryManager : MonoBehaviour
             Destroy(this);
         
         DontDestroyOnLoad(this);
+        
+        Countries.Add("Poland", PlayerCountry);
+        CountryRegions.Add("Poland", Resources.Load<CountryRegions>("Regions/RegionsPL").id.ToList());
+        CountryRegions.Add("Germany", Resources.Load<CountryRegions>("Regions/RegionsDE").id.ToList());
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Countries.Add("Poland", PlayerCountry);
-        CountryRegions.Add("Poland", Resources.Load<CountryRegions>("Regions/RegionsPL").id.ToList());
-        CountryRegions.Add("Germany", Resources.Load<CountryRegions>("Regions/RegionsDE").id.ToList());
+        
         //ResourceEvents.OnResourceGathered.AddListener(OnResourceCollected);
     }
 
