@@ -36,8 +36,8 @@ public class CountryResPresenter : MonoBehaviour
     
     public void OnResourceCollected(string type, int count)
     {
-        Debug.Log(PlayerCountry);
-        Debug.Log(type + ": " + count);
+        //Debug.Log(PlayerCountry);
+        //Debug.Log(type + ": " + count);
         PlayerCountry.CollectResource(type, count);
         CountryResourceView.Display(PlayerCountry.CountryResources);
     }

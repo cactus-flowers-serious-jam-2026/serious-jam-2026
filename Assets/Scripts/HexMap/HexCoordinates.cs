@@ -47,7 +47,7 @@ public struct HexCoordinates
             else if (dY > dX && dY > dZ) {
                 iY = -iX - iZ;
             }
-            Debug.Log($"dX:{dX} dY:{dY} dZ:{dZ} | rounded: {iX},{iY},{iZ} | sum: {iX+iY+iZ}");
+            //Debug.Log($"dX:{dX} dY:{dY} dZ:{dZ} | rounded: {iX},{iY},{iZ} | sum: {iX+iY+iZ}");
         }
         
 

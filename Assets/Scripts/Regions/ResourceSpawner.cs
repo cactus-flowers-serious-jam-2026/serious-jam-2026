@@ -21,7 +21,7 @@ public class ResourceSpawner : MonoBehaviour
     private void Awake()
     {
         ResourceCanvas = FindObjectsByType<Canvas>(FindObjectsSortMode.None).First(c => c.CompareTag("Resource Canvas"));
-        Debug.Log("Found Resource Canvas: " + ResourceCanvas.tag);
+        //Debug.Log("Found Resource Canvas: " + ResourceCanvas.tag);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,7 +29,7 @@ public class ResourceSpawner : MonoBehaviour
     {
         GameTickManager.tickEvent.AddListener(OnTickEvent);
         _regions = FindObjectsByType<Region>(FindObjectsSortMode.None)
-            .Where(r => CountryManager.instance.PlayerCountry._regions.Contains(r)).ToArray();
+            .Where(r => CountryManager.CountryRegions["Poland"].Contains(r.ID)).ToArray();
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class ResourceSpawner : MonoBehaviour
 
     private void OnTickEvent()
     {
-        Debug.Log("Tick");
+        //Debug.Log("Tick");
         foreach (var region in  _regions)
         {
             foreach (var resource in _resources)

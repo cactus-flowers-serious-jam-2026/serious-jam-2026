@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -42,15 +43,20 @@ public class HexModel : MonoBehaviour
         position = HexGrid.transform.InverseTransformPoint(position); 
         HexCoordinates coordinates = HexCoordinates.FromPosition(position);
         
-        Debug.Log("touched at " + coordinates);
-        SelectionHex.transform.localPosition = HexCoordinates.PositionFromCoordinates(coordinates);
-        SelectionHex.SetActive(true);
+        //Debug.Log("touched at " + coordinates);
         
         SelectedCell = HexGrid.GetCell(coordinates);
         Region region = SelectedCell.gameObject.GetComponent<Region>();
-        Debug.Log("CLICKED ON REGION WITH ID:" + region.ID);
-        if (region != null)
+        Debug.Log("REGION ID:" + region.ID);
+        if (region != null && 
+            (CountryManager.CountryRegions["Poland"].Contains(region.ID) ||
+             CountryManager.CountryRegions["Germany"].Contains(region.ID)))
             SelectionUIEvents.OnRegionSelected?.Invoke(region);
+        else if (region != null)
+            SelectionUIEvents.OnCellDeselected?.Invoke();
+        
+        SelectionHex.transform.localPosition = HexCoordinates.PositionFromCoordinates(coordinates);
+        SelectionHex.SetActive(true);
     }
 
     public void HandleActionChosen(Action action) // DONT TOOUCH
@@ -60,7 +66,7 @@ public class HexModel : MonoBehaviour
                 if (actionResCost.resourceTag == countryRes.Key)
                     if (actionResCost.cost > countryRes.Value.GetCount()) 
                     {
-                        Debug.Log("Not enough resources for this action!");
+                        //Debug.Log("Not enough resources for this action!");
                         return;
                     }
         

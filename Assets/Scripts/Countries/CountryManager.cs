@@ -1,9 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CountryManager : MonoBehaviour
 {
     public static Dictionary<string, Country> Countries { get; private set; } = new Dictionary<string, Country>();
+    
+    public static Dictionary<string, List<int> > CountryRegions { get; private set; } = new Dictionary<string, List<int>>(); 
     public static CountryManager instance { get; private set; }
     public Country PlayerCountry;
 
@@ -21,6 +24,8 @@ public class CountryManager : MonoBehaviour
     void Start()
     {
         Countries.Add("Poland", PlayerCountry);
+        CountryRegions.Add("Poland", Resources.Load<CountryRegions>("Regions/RegionsPL").id.ToList());
+        CountryRegions.Add("Germany", Resources.Load<CountryRegions>("Regions/RegionsDE").id.ToList());
         //ResourceEvents.OnResourceGathered.AddListener(OnResourceCollected);
     }
 

@@ -20,13 +20,13 @@ public class ActionView : MonoBehaviour
     
     public void DisplayActionPanel()
     {
-        Debug.Log("display action panel");
+        //Debug.Log("display action panel");
         actionPanel.SetActive(true);
     }
 
     public void HideActionPanel()
     {
-        Debug.Log("hide action panel");
+        //Debug.Log("hide action panel");
         actionPanel.SetActive(false);
     }
 
@@ -45,7 +45,7 @@ public class ActionView : MonoBehaviour
         foreach (var action in actions)
         {
             Button button = Instantiate(buttonPrefab, buttonContainer.transform);
-            Debug.Log($"Instantiated button for {action.Description}, parent: {button.transform.parent.name}");
+            //Debug.Log($"Instantiated button for {action.Description}, parent: {button.transform.parent.name}");
             button.GetComponentInChildren<TMP_Text>().text = action.Description;
             button.onClick.AddListener(() => SelectAction(action));
         }
