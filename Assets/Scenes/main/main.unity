@@ -2166,6 +2166,7 @@ GameObject:
   - component: {fileID: 1824571265}
   - component: {fileID: 1824571267}
   - component: {fileID: 1824571266}
+  - component: {fileID: 1824571268}
   m_Layer: 5
   m_Name: Marshal
   m_TagString: Untagged
@@ -2230,6 +2231,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824571264}
   m_CullTransparentMesh: 1
+--- !u!114 &1824571268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824571264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc08194174fe612049a3d791274ebf67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoodScript
+  decreaseMoodInterval: 8
+  MarshalImage: {fileID: 1824571266}
+  MarshalSprites:
+  - {fileID: -5273934313869204203, guid: 9573aecf27af53e46bdb6f476aa2311b, type: 3}
+  - {fileID: -5307459477661351264, guid: 780e7e221686160ec828f1aa1f3e591b, type: 3}
+  - {fileID: 5282537989697959362, guid: 4918b9f3aa0c808d2a37767a39f60658, type: 3}
+  - {fileID: 992258488158109873, guid: 69b21e16ffac329f1b03196f07dae475, type: 3}
+  - {fileID: -132073519926173502, guid: 567132472e7a565b2b8c8f9ce6d851d0, type: 3}
+  - {fileID: -8404010490945780060, guid: a89c41662785788f3aad5e46bdd3f72e, type: 3}
 --- !u!1 &1896679643 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2857085472918767302, guid: a9ec885803813628b939ed5c71db78f0, type: 3}

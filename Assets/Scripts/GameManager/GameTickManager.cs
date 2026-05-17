@@ -55,7 +55,8 @@ public class GameTickManager : MonoBehaviour
                 totalEvents.RemoveAt(randomEventNumber);
             }
             
-            if (totalEvents.Count == 0)Debug.Log("No more events...");
+            if (totalEvents.Count == 0)
+                Debug.Log("No more events...");
 
 
             //float randomTime = Random.Range(randomTimeMin, randomTimeMax);

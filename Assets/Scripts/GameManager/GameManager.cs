@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -28,6 +29,8 @@ public class GameManager : MonoBehaviour
         1 - win due to tension
         2 - win due to time
      */
+    
+    public static UnityEvent<float> WorldTensionChanged = new UnityEvent<float>();
 
     void Awake()
     {
@@ -39,18 +42,6 @@ public class GameManager : MonoBehaviour
         
         GameTickManager.tickEvent.AddListener(OnTick);
     }
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTick()
     {
@@ -60,6 +51,8 @@ public class GameManager : MonoBehaviour
         WorldTension += TensionPerTick;
         tensionMeter.fillAmount = WorldTension;
         //tension_text.text = (WorldTension * 100).ToString("F2") + "%";
+        
+        WorldTensionChanged.Invoke(WorldTension);
         
         if (WorldTension > TensionMaximumThreshold)
         {
@@ -83,5 +76,6 @@ public class GameManager : MonoBehaviour
     public static void IncreaseWorldTension(float x)
     {
         WorldTension = Math.Clamp(WorldTension + x, 0.0f, 1.0f);
+        WorldTensionChanged.Invoke(WorldTension);
     }
 }
