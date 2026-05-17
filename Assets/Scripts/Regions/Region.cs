@@ -24,17 +24,11 @@ public class Region : MonoBehaviour
         LoadAllParameters();
     }
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         ResourceBubble = Instantiate(ResourceBubblePrefab, ResourceSpawner.ResourceCanvas.transform);
         ResourceBubble.transform.position = new Vector3(transform.position.x + 0.05f, transform.position.y + 0.5f, transform.position.z);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void LoadAllParameters()

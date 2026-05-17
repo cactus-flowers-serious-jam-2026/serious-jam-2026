@@ -79,7 +79,8 @@ public class Country : MonoBehaviour
 
         for (int i = 1; i < e.ParameterChanges.Length; i++)
             for (int j = 0; j < e.ParameterChanges[i].Changes.Length; j++) 
-                _regions[i].ApplyChange(e.ParameterChanges[i].Changes[j]);
+                if(_regions[i].Parameters.ContainsKey(e.ParameterChanges[i].Changes[j].parameter))
+                    _regions[i].ApplyChange(e.ParameterChanges[i].Changes[j]);
     }
 
     private void RecalculateRegionalParameters()

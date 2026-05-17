@@ -684,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4401838063949477415, guid: 04a5a8e4a7a40214fb29246b6c20a4b4, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1979,7 +1979,10 @@ MonoBehaviour:
   tensionMeter: {fileID: 597557269}
   dateText: {fileID: 1069038090}
   fader: {fileID: 2033048303}
-  endingSceneNames: []
+  endingSceneNames:
+  - nuke
+  - based
+  - based
 --- !u!114 &1505083030 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2248590664206861006, guid: a9ec885803813628b939ed5c71db78f0, type: 3}
