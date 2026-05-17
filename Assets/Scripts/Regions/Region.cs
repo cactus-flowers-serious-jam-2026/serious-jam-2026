@@ -43,7 +43,8 @@ public class Region : MonoBehaviour
 
         foreach (Parameter param in paramsArray)
         {
-            Parameters.Add(param, Random.Range(0.8f, 1f));
+            if(param.Name != "World Tension")
+                Parameters.Add(param, Random.Range(0.8f, 1f));
         }
         
     }

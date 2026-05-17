@@ -46,7 +46,10 @@ public class ActionView : MonoBehaviour
         {
             Button button = Instantiate(buttonPrefab, buttonContainer.transform);
             //Debug.Log($"Instantiated button for {action.Description}, parent: {button.transform.parent.name}");
-            button.GetComponentInChildren<TMP_Text>().text = action.Description;
+            TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
+            buttonText.text = action.Description;
+            buttonText.fontSize = 18f;
+            
             button.onClick.AddListener(() => SelectAction(action));
         }
     }
@@ -59,8 +62,9 @@ public class ActionView : MonoBehaviour
         foreach (var kvp in parameters)
         {
             TMP_Text entry = Instantiate(parameterEntryPrefab, parameterContainer.transform);
-            entry.text = $"{kvp.Key.name}: {(int)(kvp.Value * 100)}%";
+            entry.text = $"{kvp.Key.Name}: {(int)(kvp.Value * 100)}%";
             entry.color = new Color32(50, 50, 50, 255);
+            entry.fontSize = 18f;
         }
     }
 }
