@@ -23,6 +23,6 @@ public class CountryParamPresenter : MonoBehaviour
 
     void OnParametersChanged()
     {
-        _paramView.Display(PlayerCountry.parameters);
+        _paramView.Display(PlayerCountry.parameters_temp);
     }
 }

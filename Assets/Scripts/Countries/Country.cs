@@ -12,7 +12,7 @@ public class Country : MonoBehaviour
     public Region[] _regions { get; private set; }
     
     public Dictionary<Parameter, float> parameters { get; private set; } = new Dictionary<Parameter, float>();
-    private Dictionary<Parameter, float> parameters_temp;
+    public Dictionary<Parameter, float> parameters_temp;
 
     public Dictionary<string, CountryResource> CountryResources { get; private set; } =
         new Dictionary<string, CountryResource>();
@@ -32,11 +32,11 @@ public class Country : MonoBehaviour
         
         parameters = new Dictionary<Parameter, float>()
         {
-            {Resources.Load<Parameter>("Parameters/Pollution"), 0.60f},
-            {Resources.Load<Parameter>("Parameters/Happines"), 0.60f},
-            {Resources.Load<Parameter>("Parameters/Interest_in_politics"), 0.67f},
-            {Resources.Load<Parameter>("Parameters/Stability"), 0.87f},
-            {Resources.Load<Parameter>("Parameters/War_support"), 0.15f}
+            {Resources.Load<Parameter>("Parameters/Pollution"), 0.0f},
+            {Resources.Load<Parameter>("Parameters/Happines"), 0.0f},
+            {Resources.Load<Parameter>("Parameters/Interest_in_politics"), 0.0f},
+            {Resources.Load<Parameter>("Parameters/Stability"), 0.0f},
+            {Resources.Load<Parameter>("Parameters/War_support"), 0.0f}
         };
         parameters_temp = new Dictionary<Parameter, float>(parameters);
     }
@@ -47,6 +47,8 @@ public class Country : MonoBehaviour
         _regions = FindObjectsByType<Region>(FindObjectsSortMode.None)
             .Where(r => CountryManager.CountryRegions[Name].Contains(r.ID))
             .ToArray();
+
+        RecalculateRegionalParameters();
     }
 
     // Update is called once per frame
@@ -81,6 +83,8 @@ public class Country : MonoBehaviour
             for (int j = 0; j < e.ParameterChanges[i].Changes.Length; j++) 
                 if(_regions[i].Parameters.ContainsKey(e.ParameterChanges[i].Changes[j].parameter))
                     _regions[i].ApplyChange(e.ParameterChanges[i].Changes[j]);
+        
+        RecalculateRegionalParameters();
     }
 
     private void RecalculateRegionalParameters()
@@ -94,11 +98,11 @@ public class Country : MonoBehaviour
             foreach (var region in _regions)
                 sum += region.Parameters[parameter];
             sum /= _regions.Length;
-            parameters_temp[parameter] = sum;
-            Debug.Log("Recalculated: " + parameter.Name + " " + sum);
+            parameters_temp[parameter] = sum + parameters[parameter];
+            //Debug.Log("Recalculated: " + parameter.Name + " " + sum);
         }
 
-        parameters = new Dictionary<Parameter, float>(parameters_temp);
+        //parameters = new Dictionary<Parameter, float>(parameters_temp);
         ParameterEvents.ParametersChanged.Invoke();
     }
 }

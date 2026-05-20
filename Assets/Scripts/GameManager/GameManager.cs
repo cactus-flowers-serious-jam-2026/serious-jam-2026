@@ -30,7 +30,13 @@ public class GameManager : MonoBehaviour
         2 - win due to time
      */
     
+    [SerializeField] private Country PlayerCountry;
+    
     public static UnityEvent<float> WorldTensionChanged = new UnityEvent<float>();
+
+    private Parameter stability;
+    private Parameter warSupport;
+    private Parameter pollution;
 
     void Awake()
     {
@@ -41,6 +47,15 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
         GameTickManager.tickEvent.AddListener(OnTick);
+        
+        stability =  Resources.Load<Parameter>("Parameters/Stability");
+        warSupport =  Resources.Load<Parameter>("Parameters/War_support");
+        pollution =  Resources.Load<Parameter>("Parameters/Pollution");
+    }
+
+    void Start()
+    {
+        PlayerCountry = CountryManager.instance.PlayerCountry;
     }
 
     private void OnTick()
@@ -70,6 +85,18 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("YOU WON");
             fader.LoadNextScene(endingSceneNames[2]);
+        }
+
+        if (PlayerCountry.parameters_temp[stability] <= 0.1f)
+        {
+            Debug.Log("YOU LOST");
+            fader.LoadNextScene(endingSceneNames[0]);
+        }
+        
+        if (PlayerCountry.parameters_temp[warSupport] >= 0.9f)
+        {
+            Debug.Log("YOU LOST");
+            fader.LoadNextScene(endingSceneNames[0]);
         }
     }
 

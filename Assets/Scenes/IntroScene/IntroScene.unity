@@ -1049,6 +1049,32 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 1629059330}
+    - target: {fileID: 8700194722505742171, guid: c7ab4ffcb633a87deb459ee6f5ddc72e, type: 3}
+      propertyPath: 'introLines.Array.data[0]'
+      value: The year is 2056, the nations, including whole Europe, are in shambles.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700194722505742171, guid: c7ab4ffcb633a87deb459ee6f5ddc72e, type: 3}
+      propertyPath: 'introLines.Array.data[1]'
+      value: 'Out of all possible canditates, we found you the most suitable for
+        the job that awaits you,
+
+        that being going back in time to fix this
+        mess we call "present time".'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700194722505742171, guid: c7ab4ffcb633a87deb459ee6f5ddc72e, type: 3}
+      propertyPath: 'introLines.Array.data[2]'
+      value: THAT'S RIGHT you're going back in time, to take care of relationship
+        between Poland and Germany, to (hopefully) smooth things over.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700194722505742171, guid: c7ab4ffcb633a87deb459ee6f5ddc72e, type: 3}
+      propertyPath: 'introLines.Array.data[3]'
+      value: What? Are you asking me how will it effect our time continuum, cause
+        paradoxes?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700194722505742171, guid: c7ab4ffcb633a87deb459ee6f5ddc72e, type: 3}
+      propertyPath: 'introLines.Array.data[4]'
+      value: We don't have time for that! Get in the machine and help avert the crisis!
+      objectReference: {fileID: 0}
     - target: {fileID: 9093442560373848468, guid: c7ab4ffcb633a87deb459ee6f5ddc72e, type: 3}
       propertyPath: m_Name
       value: IntroManager
