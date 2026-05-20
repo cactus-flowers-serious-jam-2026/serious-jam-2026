@@ -17,7 +17,7 @@ public class EventPresenter : MonoBehaviour
 
     void Update()
     {
-
+        /*
         if (isShowingEvent)
         {
             timeRemaining -= Time.deltaTime;
@@ -36,6 +36,7 @@ public class EventPresenter : MonoBehaviour
                 ForceCloseEvent();
             }
         }
+        */
     }
 
     public void TriggerNewEvent(int eventIndex)
