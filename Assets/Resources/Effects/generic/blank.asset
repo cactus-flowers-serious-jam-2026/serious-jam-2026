@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df8d476c3a938df9bce347e6ef98a32, type: 3}
   m_Name: blank
   m_EditorClassIdentifier: Assembly-CSharp::Effect
-  CountryId: 
+  CountryId: Poland
   ParameterChanges: []
