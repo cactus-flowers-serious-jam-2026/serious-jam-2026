@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
+  m_Name: Event_31_Cai
+  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
+  eventTitle: Brave New World...
+  eventDescription: The horror, popular digital girfriend app hacked! Lots of intimate
+    data leaked, The Hacker wants thousants of dollars for giving the digital girlfriends
+    back to their clients.
+  choicesEffects:
+  - effects:
+    - {fileID: 11400000, guid: 49beb3119e9a07fd1bd5b1ceff9b2083, type: 2}
+  - effects:
+    - {fileID: 11400000, guid: cf1c6e093f44ab102967bcb0acf0066f, type: 2}
+  scope: 0
+  buttonChoices:
+  - We have to help those customers.
+  - They should look for real girls.

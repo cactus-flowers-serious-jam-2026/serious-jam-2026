@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
+  m_Name: Event_27_Chinese
+  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
+  eventTitle: Secret Chinese labs
+  eventDescription: Secret chinese genetic laboratory has been uncovered! Scientists
+    are modifiying unborn human cells, to be born with special abilities or even
+    looks. The company offered real furries for sell, mostly for sex industries.
+  choicesEffects:
+  - effects:
+    - {fileID: 11400000, guid: ecc0ca3bb4935c33087584fd0fda9577, type: 2}
+  - effects:
+    - {fileID: 11400000, guid: 8a00cbf40a3d6d5f7bf9ec121fd80563, type: 2}
+  scope: 0
+  buttonChoices:
+  - This is inhumane! Stop this immediately!
+  - Just let people do their things.

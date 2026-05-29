@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
+  m_Name: Event_32_Lawmaker
+  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
+  eventTitle: Unspeakable
+  eventDescription: A Polish lawmaker sprays menorah with fire extinguisher!
+  choicesEffects:
+  - effects:
+    - {fileID: 11400000, guid: 6235f81365b18f73994c99cee300ee84, type: 2}
+  - effects:
+    - {fileID: 11400000, guid: 40874e1517d21d404a3f43418dfb282e, type: 2}
+  scope: 0
+  buttonChoices:
+  - Classic, don't do anything.
+  - Okay, that's enough, reprimand him.

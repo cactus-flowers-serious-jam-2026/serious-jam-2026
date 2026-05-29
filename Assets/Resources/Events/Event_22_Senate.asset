@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c675401463319e45b84f3624501f5c94, type: 3}
+  m_Name: Event_22_Senate
+  m_EditorClassIdentifier: Assembly-CSharp::GameEvent
+  eventTitle: JUST OUT OF SENATE
+  eventDescription: ' The prime minister of the UK comes out as a gooner.'
+  choicesEffects:
+  - effects:
+    - {fileID: 11400000, guid: 99eaca3430c99f1f48cab7865c51c45f, type: 2}
+  - effects:
+    - {fileID: 11400000, guid: f8e0afe42f26a55a0b7a370220269102, type: 2}
+  scope: 0
+  buttonChoices:
+  - Support him, you and him are brothers in arms.
+  - This is unspeakable and goes against Christian values!
