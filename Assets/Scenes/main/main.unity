@@ -3364,7 +3364,7 @@ MonoBehaviour:
   DaysPerTick: 24
   TensionMaximumThreshold: 0.9
   TensionMinimumThreshold: 0.1
-  TensionPerTick: 0.05
+  TensionPerTick: 0.005
   tensionMeter: {fileID: 597557269}
   dateText: {fileID: 1069038090}
   fader: {fileID: 2033048303}

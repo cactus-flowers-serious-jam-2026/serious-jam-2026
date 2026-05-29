@@ -201,6 +201,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7ab4ffcb633a87deb459ee6f5ddc72e, type: 3}
+--- !u!114 &100849986 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8700194722505742171, guid: c7ab4ffcb633a87deb459ee6f5ddc72e, type: 3}
+  m_PrefabInstance: {fileID: 100849985}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c484c7efcc2ee489581533d7d72150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IntroManager
 --- !u!114 &165109649 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4027489786101207990, guid: 0501d284a4e16d549a9211d7fca3b1fe, type: 3}
@@ -501,6 +512,14 @@ PrefabInstance:
     - target: {fileID: 1147297331615355459, guid: 0501d284a4e16d549a9211d7fca3b1fe, type: 3}
       propertyPath: m_Name
       value: EndingDialogueUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063676773735105255, guid: 0501d284a4e16d549a9211d7fca3b1fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 100849986}
+    - target: {fileID: 2063676773735105255, guid: 0501d284a4e16d549a9211d7fca3b1fe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowNextLine
       objectReference: {fileID: 0}
     - target: {fileID: 5775535468632234534, guid: 0501d284a4e16d549a9211d7fca3b1fe, type: 3}
       propertyPath: m_Pivot.x
