@@ -44,10 +44,19 @@ public class Country : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _regions = FindObjectsByType<Region>(FindObjectsSortMode.None)
+        
+    }
+    
+    public void Initialize()
+    {
+        if (!CountryManager.CountryRegions.ContainsKey(Name)) return;
+    
+        var allRegions = FindObjectsByType<Region>(FindObjectsSortMode.None);
+
+        _regions = allRegions
             .Where(r => CountryManager.CountryRegions[Name].Contains(r.ID))
             .ToArray();
-
+        
         RecalculateRegionalParameters();
     }
 
@@ -89,6 +98,9 @@ public class Country : MonoBehaviour
 
     private void RecalculateRegionalParameters()
     {
+        if (_regions == null || _regions.Length == 0) return;
+        if (_regions[0] == null) return;
+        
         foreach (var parameter in parameters.Keys)
         {
             if(!_regions[0].Parameters.ContainsKey(parameter)) // if a parameter is a global country param
@@ -99,10 +111,15 @@ public class Country : MonoBehaviour
                 sum += region.Parameters[parameter];
             sum /= _regions.Length;
             parameters_temp[parameter] = sum + parameters[parameter];
-            //Debug.Log("Recalculated: " + parameter.Name + " " + sum);
         }
 
         //parameters = new Dictionary<Parameter, float>(parameters_temp);
         ParameterEvents.ParametersChanged.Invoke();
+    }
+    
+    void OnDestroy()
+    {
+        _regions = null;
+        ParameterEvents.ParametersChanged.RemoveAllListeners();
     }
 }

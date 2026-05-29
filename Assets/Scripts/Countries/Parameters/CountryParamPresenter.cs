@@ -6,6 +6,11 @@ public class CountryParamPresenter : MonoBehaviour
     private Country PlayerCountry;
     [SerializeField]
     private CountryParamView _paramView;
+
+    void Awake()
+    {
+        //PlayerCountry = CountryManager.instance.PlayerCountry;
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +28,11 @@ public class CountryParamPresenter : MonoBehaviour
 
     void OnParametersChanged()
     {
+        if (PlayerCountry == null)
+        {
+            PlayerCountry = CountryManager.instance?.PlayerCountry;
+            if (PlayerCountry == null) return;
+        }
         _paramView.Display(PlayerCountry.parameters_temp);
     }
 }

@@ -2,11 +2,12 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameManager Instance { get; private set; }
+    public static GameManager Instance { get; private set; }
     
     public static float WorldTension = 0.15f;
     public static DateTime CurrentDate = new DateTime(2026, 05, 30);
@@ -51,6 +52,16 @@ public class GameManager : MonoBehaviour
         stability =  Resources.Load<Parameter>("Parameters/Stability");
         warSupport =  Resources.Load<Parameter>("Parameters/War_support");
         pollution =  Resources.Load<Parameter>("Parameters/Pollution");
+        
+        WorldTension = 0.15f;
+        CurrentDate = new DateTime(2026, 05, 30);
+        
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     void Start()
@@ -60,6 +71,15 @@ public class GameManager : MonoBehaviour
 
     private void OnTick()
     {
+        if(!CountryManager.Loaded)
+            return;
+        
+        if (PlayerCountry == null)
+        {
+            PlayerCountry = CountryManager.instance?.PlayerCountry;
+            if (PlayerCountry == null) return;
+        }
+        
         CurrentDate = CurrentDate.AddDays(DaysPerTick);
         dateText.text = CurrentDate.ToString("dd.MM.yyyy");
         
@@ -73,18 +93,23 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("YOU LOST");
             AudioManager.Instance.PlayMusic("nuke");
+            CountryManager.Loaded = false;
             fader.LoadNextScene(endingSceneNames[0]);
         }
 
         if (WorldTension < TensionMinimumThreshold)
         {
             Debug.Log("YOU WON");
+            AudioManager.Instance.PlayMusic("based");
+            CountryManager.Loaded = false;
             fader.LoadNextScene(endingSceneNames[1]);
         }
 
         if (CurrentDate.Year >= 2056)
         {
             Debug.Log("YOU WON");
+            AudioManager.Instance.PlayMusic("based");
+            CountryManager.Loaded = false;
             fader.LoadNextScene(endingSceneNames[2]);
         }
 
@@ -92,6 +117,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("YOU LOST");
             AudioManager.Instance.PlayMusic("nuke");
+            CountryManager.Loaded = false;
             fader.LoadNextScene(endingSceneNames[0]);
         }
         
@@ -99,6 +125,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("YOU LOST");
             AudioManager.Instance.PlayMusic("nuke");
+            CountryManager.Loaded = false;
             fader.LoadNextScene(endingSceneNames[0]);
         }
     }
@@ -107,5 +134,11 @@ public class GameManager : MonoBehaviour
     {
         WorldTension = Math.Clamp(WorldTension + x, 0.0f, 1.0f);
         WorldTensionChanged.Invoke(WorldTension);
+    }
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (CountryManager.instance != null)
+            PlayerCountry = CountryManager.instance.PlayerCountry;
     }
 }

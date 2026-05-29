@@ -76,4 +76,9 @@ public class Region : MonoBehaviour
         if(!ResourceBubble.gameObject.activeInHierarchy)
             ResourceBubble.DisplayBubble(type, count);
     }
+
+    public void OnDestroy()
+    {
+        Counter = 1;
+    }
 }

@@ -2328,63 +2328,6 @@ MonoBehaviour:
   milCost: 50
   ecoCost: 0
   effect: {fileID: 11400000, guid: cb6ccd1f219b6795987c2557aa0c141b, type: 2}
---- !u!1001 &1059204527
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7427181723706564017, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689503981657981545, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -25.13234
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689503981657981545, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 914.6671
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689503981657981545, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689503981657981545, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689503981657981545, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689503981657981545, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689503981657981545, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689503981657981545, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689503981657981545, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7689503981657981545, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3dbb8d332a8406e4aa66a2c323153152, type: 3}
 --- !u!1 &1069038089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,7 +3189,7 @@ GameObject:
   - component: {fileID: 1435964904}
   m_Layer: 0
   m_Name: Germany
-  m_TagString: Untagged
+  m_TagString: Germany
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3418,10 +3361,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fceb7328f8a95609c49c52d3594890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  DaysPerTick: 7
+  DaysPerTick: 24
   TensionMaximumThreshold: 0.9
   TensionMinimumThreshold: 0.1
-  TensionPerTick: 0.005
+  TensionPerTick: 0.05
   tensionMeter: {fileID: 597557269}
   dateText: {fileID: 1069038090}
   fader: {fileID: 2033048303}
@@ -3453,7 +3396,7 @@ GameObject:
   - component: {fileID: 1509897983}
   m_Layer: 0
   m_Name: Poland
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4380,6 +4323,5 @@ SceneRoots:
   - {fileID: 1435964905}
   - {fileID: 529996436}
   - {fileID: 176768474}
-  - {fileID: 1059204527}
   - {fileID: 1999096467}
   - {fileID: 679634021}
