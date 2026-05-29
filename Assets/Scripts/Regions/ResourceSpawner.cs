@@ -57,15 +57,15 @@ public class ResourceSpawner : MonoBehaviour
                             {
                                 case "Happiness":
                                     //Debug.Log("Penis check parameter");
-                                    spawnChance += 0.05f * (1f - param.Value);
+                                    spawnChance += 0.005f * (1f - param.Value);
                                     break;
                                 
                                 case "Interest in politics":
-                                    spawnChance += 0.05f * param.Value;
+                                    spawnChance += 0.005f * param.Value;
                                     break;
                                 
                                 case "Pollution":
-                                    spawnChance += 0.10f * param.Value;
+                                    spawnChance += 0.010f * param.Value;
                                     break;
                             }
                         }                        
@@ -77,15 +77,15 @@ public class ResourceSpawner : MonoBehaviour
                             switch (param.Key.Name)
                             {
                                 case "Interest in politics":
-                                    spawnChance += 0.025f * param.Value;
+                                    spawnChance += 0.0025f * param.Value;
                                     break;
                                 
                                 case "War support":
-                                    spawnChance += 0.1f * param.Value;
+                                    spawnChance += 0.01f * param.Value;
                                     break;
                                 
                                 case "Stability":
-                                    spawnChance += 0.05f * param.Value;
+                                    spawnChance += 0.005f * param.Value;
                                     break;
                             }
                         }   
@@ -98,22 +98,22 @@ public class ResourceSpawner : MonoBehaviour
                             switch (param.Key.Name)
                             {
                                 case "Interest in politics":
-                                    spawnChance += 0.15f * param.Value;
+                                    spawnChance += 0.015f * param.Value;
                                     break;
                                 
                                 case "Stability":
-                                    spawnChance += 0.1f * (1f - param.Value);
+                                    spawnChance += 0.01f * (1f - param.Value);
                                     break;
                                 
                                 case "Pollution":
-                                    spawnChance += 0.001f * param.Value;
+                                    spawnChance += 0.0001f * param.Value;
                                     break;
                             }
                         }   
                         break;
                 }
 
-                spawnChance /= 30;
+                spawnChance /= 3;
                 float roll = Random.value;
 
                 if (roll <= spawnChance)

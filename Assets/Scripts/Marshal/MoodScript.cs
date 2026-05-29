@@ -63,32 +63,32 @@ public class MoodScript : MonoBehaviour
         switch (currentMoodState)
         {
             case MoodState.Base:
-                if (delta >= 0.15f)
+                if (delta >= 0.15f || current > 0.5f)
                     currentMoodState = MoodState.Pissed;
-                else if (delta >= 0.05f)
+                else if (delta >= 0.05f || current > 0.4f)
                     currentMoodState = MoodState.Tired;
                 else if (delta < 0)
                     currentMoodState = MoodState.Smirk;
                 break;
             
             case MoodState.Tired:
-                if (delta >= 0.15f)
+                if (delta >= 0.15f || current > 0.6f)
                     currentMoodState = MoodState.Furious;
-                else if (delta >= 0.05f)
+                else if (delta >= 0.05f || current > 0.5f) 
                     currentMoodState = MoodState.Pissed;
                 else if (delta < 0)
                     currentMoodState--;
                 break;
             
             case MoodState.Furious:
-                if (delta >= 0.05f)
+                if (delta >= 0.05f || current > 0.75f)
                     currentMoodState = MoodState.Defeated;
-                else if (delta < 0)
+                else if (delta < 0 || current < 0.6f)
                     currentMoodState = MoodState.Pissed;
                 break;
             
             case MoodState.Defeated:
-                if (delta < 0)
+                if (delta < 0 || current < 0.6f)
                     currentMoodState = MoodState.Pissed;
                 break;
             

@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public GameManager Instance { get; private set; }
     
-    public static float WorldTension = 0.67f;
-    public static DateTime CurrentDate = new DateTime(2026, 05, 17);
+    public static float WorldTension = 0.15f;
+    public static DateTime CurrentDate = new DateTime(2026, 05, 30);
 
     [SerializeField] 
     private int DaysPerTick = 7;

@@ -48,7 +48,7 @@ public class ActionView : MonoBehaviour
             //Debug.Log($"Instantiated button for {action.Description}, parent: {button.transform.parent.name}");
             TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
             buttonText.text = action.Description;
-            buttonText.fontSize = 18f;
+            buttonText.fontSize = 24f;
             
             button.onClick.AddListener(() => SelectAction(action));
         }
@@ -64,7 +64,7 @@ public class ActionView : MonoBehaviour
             TMP_Text entry = Instantiate(parameterEntryPrefab, parameterContainer.transform);
             entry.text = $"{kvp.Key.Name}: {(int)(kvp.Value * 100)}%";
             entry.color = new Color32(50, 50, 50, 255);
-            entry.fontSize = 18f;
+            entry.fontSize = 24f;
         }
     }
 }

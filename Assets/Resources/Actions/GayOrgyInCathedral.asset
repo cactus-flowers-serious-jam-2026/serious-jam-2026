@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fdcd479b444737eb81be6a82be4a0e, type: 3}
   m_Name: GayOrgyInCathedral
   m_EditorClassIdentifier: Assembly-CSharp::Action
-  Description: Spend money on propaganda (35 pol)
-  Effect: {fileID: 11400000, guid: fc4015deb5fe2a5d2a70926ea23dc2f2, type: 2}
+  Description: Push political propaganda (10 pol)
+  Effect: {fileID: 11400000, guid: f290aa92027def4e3808af6d4b2ba710, type: 2}
   Timeout: 0
   Cost:
   - resourceTag: pol
-    cost: 35
+    cost: 10
   Active: 0
   ActionID: GayOrgyInCathedral

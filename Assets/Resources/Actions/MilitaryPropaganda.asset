@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67fdcd479b444737eb81be6a82be4a0e, type: 3}
-  m_Name: CleanEnvironment
+  m_Name: MilitaryPropaganda
   m_EditorClassIdentifier: Assembly-CSharp::Action
-  Description: Clean the environment (5 eco)
-  Effect: {fileID: 11400000, guid: bf082a081e1fb2dd4861f0860a19c460, type: 2}
+  Description: Push military propaganda (5 pol 5 mil)
+  Effect: {fileID: 11400000, guid: 779194c550dfa21b3bc29c0cb18b24b9, type: 2}
   Timeout: 0
   Cost:
-  - resourceTag: eco
+  - resourceTag: pol
     cost: 5
-  Active: 1
-  ActionID: CleanEnvironment
+  - resourceTag: mil
+    cost: 5
+  Active: 0
+  ActionID: MilitaryPropaganda

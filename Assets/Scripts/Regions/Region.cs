@@ -65,8 +65,10 @@ public class Region : MonoBehaviour
 
     public void ApplyChange(ParameterChange pc)
     {
+        Debug.Log(Parameters[pc.parameter]);
         Parameters[pc.parameter] = Math.Clamp(Parameters[pc.parameter] + pc.change, 0.0f, 1.0f); 
         Debug.Log(pc.parameter + " " + pc.change);
+        Debug.Log(Parameters[pc.parameter]);
     }
 
     public void SpawnResource(string type, int count)

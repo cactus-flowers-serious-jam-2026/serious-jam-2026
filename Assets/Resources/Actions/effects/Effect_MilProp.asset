@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7df8d476c3a938df9bce347e6ef98a32, type: 3}
-  m_Name: Effect_Glob_EUC
+  m_Name: Effect_MilProp
   m_EditorClassIdentifier: Assembly-CSharp::Effect
   CountryId: Poland
   ParameterChanges:
   - Changes:
+    - parameter: {fileID: 11400000, guid: e35f567fcf221554692c5bb059743adb, type: 2}
+      change: 0.15
     - parameter: {fileID: 11400000, guid: 62841a65ad9d8154a81e606514256261, type: 2}
-      change: -0.05
-    - parameter: {fileID: 11400000, guid: 5192d0b480eb7bf42b70fb3bb1830bad, type: 2}
-      change: -0.05
+      change: 0.1
