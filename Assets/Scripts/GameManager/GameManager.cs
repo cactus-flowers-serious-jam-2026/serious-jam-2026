@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         
         GameTickManager.tickEvent.AddListener(OnTick);
         
@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
         if (WorldTension > TensionMaximumThreshold)
         {
             Debug.Log("YOU LOST");
+            AudioManager.Instance.PlayMusic("nuke");
             fader.LoadNextScene(endingSceneNames[0]);
         }
 
@@ -90,12 +91,14 @@ public class GameManager : MonoBehaviour
         if (PlayerCountry.parameters_temp[stability] <= 0.1f)
         {
             Debug.Log("YOU LOST");
+            AudioManager.Instance.PlayMusic("nuke");
             fader.LoadNextScene(endingSceneNames[0]);
         }
         
         if (PlayerCountry.parameters_temp[warSupport] >= 0.9f)
         {
             Debug.Log("YOU LOST");
+            AudioManager.Instance.PlayMusic("nuke");
             fader.LoadNextScene(endingSceneNames[0]);
         }
     }

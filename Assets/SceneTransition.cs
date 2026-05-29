@@ -13,6 +13,7 @@ public class SceneTransition : MonoBehaviour
     void Start()
     {
         StartCoroutine(FadeIn());
+        //DontDestroyOnLoad(gameObject);
     }
 
     public void LoadNextScene(string sceneName)

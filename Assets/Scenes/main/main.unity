@@ -1604,7 +1604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4225633975936678978, guid: 04a5a8e4a7a40214fb29246b6c20a4b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4401838063949477415, guid: 04a5a8e4a7a40214fb29246b6c20a4b4, type: 3}
       propertyPath: m_Type
@@ -3403,7 +3403,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  chanceToSpawnEvent: 0.05
+  chanceToSpawnEvent: 0.075
   randomTimeMin: 0
   randomTimeMax: 0
 --- !u!114 &1499834434

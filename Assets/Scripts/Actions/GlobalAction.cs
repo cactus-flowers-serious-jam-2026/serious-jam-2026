@@ -36,6 +36,7 @@ public class GlobalAction : MonoBehaviour
             _country.ApplyEffect(effect);
             ResourceEvents.OnResourceGathered.Invoke("", 0);
             //GameManager.IncreaseWorldTension(0);
+            AudioManager.Instance.PlayOneShot("click");
         }
     }
 }

@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        PlayMusic();
+        PlayMusic("bgmusic");
     }
 
 
@@ -34,16 +34,22 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void PlayMusic()
+    public void PlayMusic(string id)
     {
-        AudioEntry entry = audioLibrary.Get("bgmusic");
+        AudioEntry entry = audioLibrary.Get(id);
         if (entry != null)
         {
+            musicSource.Stop();
             musicSource.clip = entry.audioClip;
             musicSource.loop = true;
             musicSource.Play();
         }
 
+    }
+
+    public void StopMusic()
+    {
+        musicSource.Stop();
     }
     
 

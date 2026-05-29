@@ -62,6 +62,7 @@ public class EventPresenter : MonoBehaviour
             timeRemaining = maxTime;
 
             eventUI.ShowEvent(eventToShow);
+            //AudioEvents.InvokeOnEventPoppedUp();
         }
         else
         {
@@ -79,6 +80,7 @@ public class EventPresenter : MonoBehaviour
 
     public void OnOptionSelected(int choiceIndex)
     {
+        AudioEvents.InvokeOnClicked();
         Debug.Log("Player clicked option: " + choiceIndex);
 
         Debug.Log(currentActiveEvent.choicesEffects.Length);

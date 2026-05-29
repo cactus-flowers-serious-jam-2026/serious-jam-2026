@@ -19,9 +19,10 @@ public class CountryManager : MonoBehaviour
         
         DontDestroyOnLoad(this);
         
-        Countries.Add("Poland", PlayerCountry);
-        CountryRegions.Add("Poland", Resources.Load<CountryRegions>("Regions/RegionsPL").id.ToList());
-        CountryRegions.Add("Germany", Resources.Load<CountryRegions>("Regions/RegionsDE").id.ToList());
+        Countries.TryAdd("Poland", PlayerCountry);
+        
+        CountryRegions.TryAdd("Poland", Resources.Load<CountryRegions>("Regions/RegionsPL").id.ToList());
+        CountryRegions.TryAdd("Germany", Resources.Load<CountryRegions>("Regions/RegionsDE").id.ToList());
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

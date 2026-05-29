@@ -29,6 +29,7 @@ public class EventUI : MonoBehaviour
         SetupButtons(eventToShow);
 
         eventPanel.SetActive(true);
+        AudioManager.Instance.PlayOneShot("event");
     }
 
     public void UpdateTimerBar(float fillAmount)

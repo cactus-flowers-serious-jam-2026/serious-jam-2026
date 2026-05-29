@@ -56,6 +56,8 @@ public class IntroManager : MonoBehaviour
         else
         {
             //SceneManager.LoadScene(nextSceneName);
+            if(AudioManager.Instance != null)
+                AudioManager.Instance.StopMusic();
             faderCanvas.LoadNextScene(nextSceneName);
         }
     }

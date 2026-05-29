@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioLibrary
   audioEntries:
   - {fileID: 11400000, guid: 6dc20da23e36da64eaebc0df18fc4236, type: 2}
+  - {fileID: 11400000, guid: 880843a7ce677974abb8bf43068c1638, type: 2}
+  - {fileID: 11400000, guid: fbc1296afc5f59f47947a30a77bf3796, type: 2}
+  - {fileID: 11400000, guid: 4ba880f2595705c4abc13448c1b4cd85, type: 2}
+  - {fileID: 11400000, guid: 61f388744562bb0b09e6408ae9f100cf, type: 2}
